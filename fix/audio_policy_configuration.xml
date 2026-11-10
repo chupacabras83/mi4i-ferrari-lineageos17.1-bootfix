@@ -3,22 +3,20 @@
 <audioPolicyConfiguration version="1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
     <globalConfiguration speaker_driver_status_dummy_device="false">
         <attachedDevices>
-            <item>AUDIO_DEVICE_OUT_EARPIECE</item>
-            <item>AUDIO_DEVICE_OUT_SPEAKER</item>
-            <item>AUDIO_DEVICE_OUT_TELEPHONY_TX</item>
+            <item>Earpiece</item>
+            <item>Speaker</item>
         </attachedDevices>
-        <defaultOutputDevice>AUDIO_DEVICE_OUT_SPEAKER</defaultOutputDevice>
+        <defaultOutputDevice>Speaker</defaultOutputDevice>
     </globalConfiguration>
 
     <modules>
         <!-- Primary module (audio.primary.msm8916) -->
         <module name="primary" halVersion="2.0">
             <attachedDevices>
-                <item>AUDIO_DEVICE_OUT_EARPIECE</item>
-                <item>AUDIO_DEVICE_OUT_SPEAKER</item>
-                <item>AUDIO_DEVICE_OUT_TELEPHONY_TX</item>
+                <item>Earpiece</item>
+                <item>Speaker</item>
             </attachedDevices>
-            <defaultOutputDevice>AUDIO_DEVICE_OUT_SPEAKER</defaultOutputDevice>
+            <defaultOutputDevice>Speaker</defaultOutputDevice>
             <mixPorts>
                 <mixPort name="primary output" role="source" flags="AUDIO_OUTPUT_FLAG_PRIMARY">
                     <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
