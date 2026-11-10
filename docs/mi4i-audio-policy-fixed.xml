@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Xiaomi Mi 4i (ferrari), MSM8939, LineageOS 17.1 (Android 10).
+  audio_policy_configuration.xml with a COMPLETE inline <volumes> section.
+  Fixes the audioserver SIGSEGV in EngineBase::loadAudioPolicyEngineConfig()
+  (missing volume-group entries -> end() dereference).
+-->
+<audioPolicyConfiguration version="1.0">
+    <globalConfiguration speaker_drc_enabled="false"/>
+
+    <modules>
+        <module name="primary" halVersion="2.0">
+            <attachedDevices>
+                <item>Earpiece</item>
+                <item>Speaker</item>
+                <item>Built-In Mic</item>
+                <item>Back Mic</item>
+                <item>Voice Call</item>
+                <item>FM Tuner</item>
+            </attachedDevices>
+            <defaultOutputDevice>Speaker</defaultOutputDevice>
+            <mixPorts>
+                <mixPort name="primary output" role="source" flags="AUDIO_OUTPUT_FLAG_PRIMARY">
+                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
+                             samplingRates="8000,11025,16000,22050,32000,44100,48000"
+                             channelMasks="AUDIO_CHANNEL_OUT_MONO,AUDIO_CHANNEL_OUT_STEREO"/>
+                </mixPort>
+                <mixPort name="low_latency" role="source" flags="AUDIO_OUTPUT_FLAG_FAST">
+                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
+                             samplingRates="44100,48000"
+                             channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
+                </mixPort>
+                <mixPort name="primary input" role="sink">
+                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
+                             samplingRates="8000,11025,12000,16000,22050,24000,32000,44100,48000"
+                             channelMasks="AUDIO_CHANNEL_IN_MONO,AUDIO_CHANNEL_IN_STEREO,AUDIO_CHANNEL_IN_FRONT_BACK"/>
+                </mixPort>
+            </mixPorts>
+            <devicePorts>
+                <devicePort tagName="Earpiece" type="AUDIO_DEVICE_OUT_EARPIECE" role="sink"/>
+                <devicePort tagName="Speaker" type="AUDIO_DEVICE_OUT_SPEAKER" role="sink"/>
+                <devicePort tagName="Wired Headset" type="AUDIO_DEVICE_OUT_WIRED_HEADSET" role="sink"/>
+                <devicePort tagName="Wired Headphone" type="AUDIO_DEVICE_OUT_WIRED_HEADPHONE" role="sink"/>
+                <devicePort tagName="Line Out" type="AUDIO_DEVICE_OUT_LINE" role="sink"/>
+                <devicePort tagName="BT SCO" type="AUDIO_DEVICE_OUT_BLUETOOTH_SCO" role="sink"/>
+                <devicePort tagName="Proxy" type="AUDIO_DEVICE_OUT_PROXY" role="sink"/>
+                <devicePort tagName="Aux Digital" type="AUDIO_DEVICE_OUT_AUX_DIGITAL" role="sink"/>
+                <devicePort tagName="Dock Headset" type="AUDIO_DEVICE_OUT_ANLG_DOCK_HEADSET" role="sink"/>
+                <devicePort tagName="FM" type="AUDIO_DEVICE_OUT_FM" role="sink"/>
+                <devicePort tagName="Built-In Mic" type="AUDIO_DEVICE_IN_BUILTIN_MIC" role="source"/>
+                <devicePort tagName="Wired Headset Mic" type="AUDIO_DEVICE_IN_WIRED_HEADSET" role="source"/>
+                <devicePort tagName="BT SCO Headset Mic" type="AUDIO_DEVICE_IN_BLUETOOTH_SCO_HEADSET" role="source"/>
+                <devicePort tagName="Back Mic" type="AUDIO_DEVICE_IN_BACK_MIC" role="source"/>
+                <devicePort tagName="Dock Headset Mic" type="AUDIO_DEVICE_IN_ANLG_DOCK_HEADSET" role="source"/>
+                <devicePort tagName="Voice Call" type="AUDIO_DEVICE_IN_VOICE_CALL" role="source"/>
+                <devicePort tagName="FM Tuner" type="AUDIO_DEVICE_IN_FM_TUNER" role="source"/>
+            </devicePorts>
+            <routes>
+                <route type="mix" sink="Earpiece" sources="primary output,low_latency"/>
+                <route type="mix" sink="Speaker" sources="primary output,low_latency"/>
+                <route type="mix" sink="Wired Headset" sources="primary output,low_latency"/>
+                <route type="mix" sink="Wired Headphone" sources="primary output,low_latency"/>
+                <route type="mix" sink="Line Out" sources="primary output,low_latency"/>
+                <route type="mix" sink="BT SCO" sources="primary output,low_latency"/>
+                <route type="mix" sink="Proxy" sources="primary output,low_latency"/>
+                <route type="mix" sink="Aux Digital" sources="primary output,low_latency"/>
+                <route type="mix" sink="Dock Headset" sources="primary output,low_latency"/>
+                <route type="mix" sink="FM" sources="primary output"/>
+                <route type="mix" sink="primary input" sources="Built-In Mic,Wired Headset Mic,BT SCO Headset Mic,Back Mic,Dock Headset Mic,Voice Call,FM Tuner"/>
+            </routes>
+        </module>
+
+        <module name="a2dp" halVersion="2.0">
+            <mixPorts>
+                <mixPort name="a2dp output" role="source">
+                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
+                             samplingRates="44100" channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
+                </mixPort>
+            </mixPorts>
+            <devicePorts>
+                <devicePort tagName="BT A2DP Out" type="AUDIO_DEVICE_OUT_BLUETOOTH_A2DP" role="sink"/>
+            </devicePorts>
+            <routes>
+                <route type="mix" sink="BT A2DP Out" sources="a2dp output"/>
+            </routes>
+        </module>
+
+        <module name="usb" halVersion="2.0">
+            <mixPorts>
+                <mixPort name="usb_accessory output" role="source">
+                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
+                             samplingRates="44100" channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
+                </mixPort>
+                <mixPort name="usb_device output" role="source"/>
+                <mixPort name="usb_device input" role="sink"/>
+            </mixPorts>
+            <devicePorts>
+                <devicePort tagName="USB Accessory Out" type="AUDIO_DEVICE_OUT_USB_ACCESSORY" role="sink"/>
+                <devicePort tagName="USB Device Out" type="AUDIO_DEVICE_OUT_USB_DEVICE" role="sink"/>
+                <devicePort tagName="USB Device In" type="AUDIO_DEVICE_IN_USB_DEVICE" role="source"/>
+            </devicePorts>
+            <routes>
+                <route type="mix" sink="USB Accessory Out" sources="usb_accessory output"/>
+                <route type="mix" sink="USB Device Out" sources="usb_device output"/>
+                <route type="mix" sink="usb_device input" sources="USB Device In"/>
+            </routes>
+        </module>
+
+        <module name="r_submix" halVersion="2.0">
+            <attachedDevices>
+                <item>Remote Submix In</item>
+            </attachedDevices>
+            <mixPorts>
+                <mixPort name="r_submix output" role="source">
+                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
+                             samplingRates="48000" channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
+                </mixPort>
+                <mixPort name="r_submix input" role="sink">
+                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
+                             samplingRates="48000" channelMasks="AUDIO_CHANNEL_IN_STEREO"/>
+                </mixPort>
+            </mixPorts>
+            <devicePorts>
+                <devicePort tagName="Remote Submix Out" type="AUDIO_DEVICE_OUT_REMOTE_SUBMIX" role="sink"/>
+                <devicePort tagName="Remote Submix In" type="AUDIO_DEVICE_IN_REMOTE_SUBMIX" role="source"/>
+            </devicePorts>
+            <routes>
+                <route type="mix" sink="Remote Submix Out" sources="r_submix output"/>
+                <route type="mix" sink="r_submix input" sources="Remote Submix In"/>
+            </routes>
+        </module>
+    </modules>
+
+    <!-- COMPLETE inline volumes: all 13 streams so every default product strategy
+         resolves a volume group (otherwise loadProductStrategies() null-derefs). -->
+    <volumes>
+        <volume stream="AUDIO_STREAM_VOICE_CALL" deviceCategory="DEVICE_CATEGORY_EARPIECE">
+            <point>1,-2700</point><point>33,-2200</point><point>66,-2000</point><point>100,-1700</point>
+        </volume>
+        <volume stream="AUDIO_STREAM_VOICE_CALL" deviceCategory="DEVICE_CATEGORY_HEADSET">
+            <point>1,-2700</point><point>33,-2200</point><point>66,-2000</point><point>100,-1700</point>
+        </volume>
+        <volume stream="AUDIO_STREAM_VOICE_CALL" deviceCategory="DEVICE_CATEGORY_SPEAKER">
+            <point>1,-2700</point><point>33,-2200</point><point>66,-2000</point><point>100,-1700</point>
+        </volume>
+        <volume stream="AUDIO_STREAM_SYSTEM" deviceCategory="DEVICE_CATEGORY_HEADSET">
+            <point>1,-3000</point><point>33,-2600</point><point>66,-2200</point><point>100,-1800</point>
+        </volume>
+        <volume stream="AUDIO_STREAM_SYSTEM" deviceCategory="DEVICE_CATEGORY_SPEAKER">
+            <point>1,-3000</point><point>33,-2600</point><point>66,-2200</point><point>100,-1800</point>
+        </volume>
+        <volume stream="AUDIO_STREAM_RING" deviceCategory="DEVICE_CATEGORY_HEADSET">
+            <point>1,-3000</point><point>33,-2600</point><point>66,-2200</point><point>100,-1800</point>
+        </volume>
+        <volume stream="AUDIO_STREAM_RING" deviceCategory="DEVICE_CATEGORY_SPEAKER">
+            <point>1,-3000</point><point>33,-2600</point><point>66,-2200</point><point>100,-1800</point>
+        </volume>
+        <volume stream="AUDIO_STREAM_MUSIC" deviceCategory="DEVICE_CATEGORY_HEADSET">
+            <point>1,-3000</point><point>33,-2600</point><point>66,-2200</point><point>100,-1800</point>
+        </volume>
+        <volume stream="AUDIO_STREAM_MUSIC" deviceCategory="DEVICE_CATEGORY_SPEAKER">
+            <point>1,-3000</point><point>33,-2600</point><point>66,-2200</point><point>100,-1800</point>
+        </volume>
+        <volume stream="AUDIO_STREAM_ALARM" deviceCategory="DEVICE_CATEGORY_HEADSET">
+            <point>1,-3000</point><point>33,-2600</point><point>66,-2200</point><point>100,-1800</point>
+        </volume>
+        <volume stream="AUDIO_STREAM_ALARM" deviceCategory="DEVICE_CATEGORY_SPEAKER">
+            <point>1,-3000</point><point>33,-2600</point><point>66,-2200</point><point>100,-1800</point>
+        </volume>
+        <volume stream="AUDIO_STREAM_NOTIFICATION" deviceCategory="DEVICE_CATEGORY_HEADSET">
+            <point>1,-3000</point><point>33,-2600</point><point>66,-2200</point><point>100,-1800</point>
+        </volume>
+        <volume stream="AUDIO_STREAM_NOTIFICATION" deviceCategory="DEVICE_CATEGORY_SPEAKER">
+            <point>1,-3000</point><point>33,-2600</point><point>66,-2200</point><point>100,-1800</point>
+        </volume>
+        <volume stream="AUDIO_STREAM_BLUETOOTH_SCO" deviceCategory="DEVICE_CATEGORY_HEADSET">
+            <point>1,-3000</point><point>33,-2600</point><point>66,-2200</point><point>100,-1800</point>
+        </volume>
+        <volume stream="AUDIO_STREAM_BLUETOOTH_SCO" deviceCategory="DEVICE_CATEGORY_SPEAKER">
+            <point>1,-3000</point><point>33,-2600</point><point>66,-2200</point><point>100,-1800</point>
+        </volume>
+        <volume stream="AUDIO_STREAM_ENFORCED_AUDIBLE" deviceCategory="DEVICE_CATEGORY_HEADSET">
+            <point>1,-3000</point><point>33,-2600</point><point>66,-2200</point><point>100,-1800</point>
+        </volume>
+        <volume stream="AUDIO_STREAM_ENFORCED_AUDIBLE" deviceCategory="DEVICE_CATEGORY_SPEAKER">
+            <point>1,-3000</point><point>33,-2600</point><point>66,-2200</point><point>100,-1800</point>
+        </volume>
+        <volume stream="AUDIO_STREAM_DTMF" deviceCategory="DEVICE_CATEGORY_HEADSET">
+            <point>1,-3000</point><point>33,-2600</point><point>66,-2200</point><point>100,-1800</point>
+        </volume>
+        <volume stream="AUDIO_STREAM_DTMF" deviceCategory="DEVICE_CATEGORY_SPEAKER">
+            <point>1,-3000</point><point>33,-2600</point><point>66,-2200</point><point>100,-1800</point>
+        </volume>
+        <volume stream="AUDIO_STREAM_TTS" deviceCategory="DEVICE_CATEGORY_HEADSET">
+            <point>1,-3000</point><point>33,-2600</point><point>66,-2200</point><point>100,-1800</point>
+        </volume>
+        <volume stream="AUDIO_STREAM_TTS" deviceCategory="DEVICE_CATEGORY_SPEAKER">
+            <point>1,-3000</point><point>33,-2600</point><point>66,-2200</point><point>100,-1800</point>
+        </volume>
+        <volume stream="AUDIO_STREAM_ACCESSIBILITY" deviceCategory="DEVICE_CATEGORY_HEADSET">
+            <point>1,-3000</point><point>33,-2600</point><point>66,-2200</point><point>100,-1800</point>
+        </volume>
+        <volume stream="AUDIO_STREAM_ACCESSIBILITY" deviceCategory="DEVICE_CATEGORY_SPEAKER">
+            <point>1,-3000</point><point>33,-2600</point><point>66,-2200</point><point>100,-1800</point>
+        </volume>
+        <volume stream="AUDIO_STREAM_REROUTING" deviceCategory="DEVICE_CATEGORY_HEADSET">
+            <point>0,0</point><point>100,0</point>
+        </volume>
+        <volume stream="AUDIO_STREAM_REROUTING" deviceCategory="DEVICE_CATEGORY_SPEAKER">
+            <point>0,0</point><point>100,0</point>
+        </volume>
+        <volume stream="AUDIO_STREAM_PATCH" deviceCategory="DEVICE_CATEGORY_HEADSET">
+            <point>0,0</point><point>100,0</point>
+        </volume>
+        <volume stream="AUDIO_STREAM_PATCH" deviceCategory="DEVICE_CATEGORY_SPEAKER">
+            <point>0,0</point><point>100,0</point>
+        </volume>
+    </volumes>
+</audioPolicyConfiguration>
