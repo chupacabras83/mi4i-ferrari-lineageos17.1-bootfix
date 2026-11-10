@@ -49,13 +49,36 @@ The corrected file is [`fix/manifest.xml`](fix/manifest.xml).
 
 ---
 
+## Complete fix summary (5 fixes, verified on a real device)
+
+This ROM needed **five** fixes to boot (each masked the next until applied):
+
+1. **vintf device manifest** — remove invalid `target-level="legacy"` + add missing
+   `renderscript` `<interface>` (this stopped the `hwservicemanager` null-pointer crash).
+2. **Duplicate HAL** — remove the duplicate `android.hardware.cas@1.0` entry from the main
+   manifest (the fragment already declares `cas@1.1`).
+3. **Mislabeled vendor HALs** — relabel `light` → `hal_light_default_exec` and `power` →
+   `hal_power_default_exec`; disable the two non-essential mislabeled HALs
+   (`livedisplay-legacymm`, `cryptfshw`) by renaming their `.rc` files.
+4. **hwservicemanager `critical`** — remove the `critical` keyword so a crash no longer
+   fatal-reboots (aids diagnosis; optional for normal use).
+5. **audio policy** — provide
+   [`audio_policy_configuration.xml`](fix/audio_policy_configuration.xml) (Android 10
+   requires it; the ROM only shipped legacy `audio_policy.conf`), which stopped the
+   `audioserver` crash-loop that triggered Rescue Party.
+
+With all five applied, the device boots LineageOS 17.1 to the boot animation and system.
+
+---
+
 ## Repository contents
 
 | Path | What it is |
 |------|------------|
 | [`fix/manifest.xml`](fix/manifest.xml) | The **fixed** device HAL manifest (drop-in replacement). |
 | [`fix/manifest.xml.orig`](fix/manifest.xml.orig) | The original (broken) manifest, for reference/diff. |
-| [`fix/manifest.patch`](fix/manifest.patch) | Unified diff of the two-line fix. |
+| [`fix/manifest.patch`](fix/manifest.patch) | Unified diff of the manifest fix. |
+| [`fix/audio_policy_configuration.xml`](fix/audio_policy_configuration.xml) | Android 10 audio policy config (fixes the `audioserver` crash). |
 | [`scripts/download_roms.py`](scripts/download_roms.py) | Downloads the ROM + GApps and verifies MD5 (with resume). |
 | [`scripts/fix_manifest.py`](scripts/fix_manifest.py) | Reproducibly applies the fix to a pulled manifest. |
 | [`docs/diagnosis.md`](docs/diagnosis.md) | Full forensic analysis (tombstone backtraces). |
@@ -183,9 +206,10 @@ flash as normal. The patch is a plain unified diff against
 ## Status & verification
 
 - ✅ Root cause identified: null device HAL manifest → `hwservicemanager` SIGSEGV at boot.
-- ✅ Fix applied on-device (manifest replaced, MD5 verified, context/perms restored).
-- ⏳ Boot verification: in progress at the time of publishing (see commit history for
-  updates). If you apply this and it boots, please open an issue/PR to confirm.
+- ✅ All 5 fixes applied on-device (manifest, cas, HAL labels, critical flag, audio policy).
+- ✅ Device boots LineageOS 17.1 to the boot animation / system (verified 2026-11-10).
+- ⏳ Full first-boot completion (setup screen) was being confirmed at the time of the last
+  commit.
 
 ---
 
