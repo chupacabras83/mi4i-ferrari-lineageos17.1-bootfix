@@ -224,6 +224,6 @@ flash as normal. The patch is a plain unified diff against
 - `fix/manifest.xml` is a two-line modification of a file authored by the LineageOS
   `ferrari` maintainer; it is included for interoperability/recovery purposes.
 
-## WiFi status (2026-11-11)
+## WiFi status (2026-11-11): FIXED
 
-Not working yet. The socket-directory fix is applied; the HAL to prima driver capability query still fails (`Error:-3`). Stock MIUI WiFi files were extracted (stock HAL is not a drop-in). Full details and next options: [docs/mi4i-wifi.md](docs/mi4i-wifi.md).
+WiFi works (scans 2.4 and 5 GHz). Two fixes: create `/dev/socket/wifihal` in the legacy WiFi HAL `.rc`, and declare `android.hardware.wifi.supplicant` **@1.2** (not 1.0) in `/vendor/etc/vintf/manifest.xml`. Details: [docs/mi4i-wifi.md](docs/mi4i-wifi.md).

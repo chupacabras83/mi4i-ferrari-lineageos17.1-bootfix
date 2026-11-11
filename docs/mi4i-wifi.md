@@ -1,71 +1,66 @@
-# Mi 4i (ferrari) — WiFi on LineageOS 17.1: status & findings
+# Mi 4i (ferrari) — WiFi on LineageOS 17.1: FIXED
 
-Status: **not working yet**. Driver loads; the Android 10 WiFi HAL fails the capability query.
+Status (2026-11-11 14:30 SGT): **WiFi works.** `dumpsys wifi` → `Wi-Fi is enabled`,
+`wpa_supplicant` running, scans return 2.4 GHz and 5 GHz networks (RSSI around −28 dBm near the AP).
 
-## Symptoms
-- `settings get global wifi_on` = 1, but `dumpsys wifi` → `Wi-Fi is disabled`
-- `StaEnabledState → StaDisabledWithScanState` (enable fails)
-- Kernel side is healthy: `wlan: loading driver v3.0.11.85`, `WCNSS WLAN version 1.5.1.2`,
-  `CNSS-PR-2-0-1-c4-00017`, `WCN v2.0 RadioPhy vIris_TSMC_4.0`, `wlan.driver.status=ok`
-- Running: `android.hardware.wifi@1.0-service.legacy` (user wifi), `wificond`, `wcnss_service`
+## Symptoms (before)
+- `wifi_on=1` but `Wi-Fi is disabled`; WifiController loops `StaEnabledState → StaDisabledWithScanState`
+- Driver healthy: prima `wlan` v3.0.11.85, WCNSS `CNSS-PR-2-0-1-c4-00017`, `wlan.driver.status=ok`
 
-## Layer 1 — FIXED: missing HAL control-socket directory
-`libwifi-hal.so` binds `/dev/socket/wifihal/wifihal_ctrlsock`, but nothing created the
-directory → `ctrl_iface bind(PF_UNIX) failed: No such file or directory`.
-
-Fix (applied on device, file in `fix/wifi/`): append to
-`/vendor/etc/init/android.hardware.wifi@1.0-service.legacy.rc`:
+## Fix 1: create the WiFi HAL socket directory
+`libwifi-hal.so` binds `/dev/socket/wifihal/wifihal_ctrlsock`; nothing created the dir.
+Append to `/vendor/etc/init/android.hardware.wifi@1.0-service.legacy.rc` (file in `fix/wifi/`):
 ```
 on post-fs
     mkdir /dev/socket/wifihal 0770 wifi wifi
 ```
-Verified: `/dev/socket/wifihal/wifihal_ctrlsock` now exists after boot.
 
-## Layer 2 — OPEN: `acquire_driver_supported_features: requestResponse Error:-3`
-→ `Failed to get wifi Capabilities, error: -3`.
+## Fix 2 (the real blocker): supplicant HIDL version in the VINTF manifest
+Framework log (`docs/wifi-failure-logcat-before-fix.txt`):
+```
+I SupplicantStaIfaceHal: Completed initialization of ISupplicant.
+E SupplicantStaIfaceHal: Got zero HIDL supplicant ifaces. Stopping supplicant HIDL startup.
+E SupplicantStaIfaceHal: setupIface got null iface
+E WifiNative: Failed to setup iface in supplicant on Iface:{Name=wlan0,...STA_CONNECTIVITY}
+```
+`wpa_supplicant` (v2.8-devel) implements `android.hardware.wifi.supplicant@1.2`, and the
+Android 10 framework requires ≥1.1 to add an interface. But `/vendor/etc/vintf/manifest.xml`
+declared only **@1.0**, so hwservicemanager registered only 1.0. The framework could not create
+the STA interface and killed the supplicant about 4 s later.
 
-Current on-device HAL `/vendor/lib64/libwifi-hal.so` (481616 bytes,
-sha256 `991fed4ce3e195b129abde3bfca12514facbc741f50d2b8c5f92374dba4647ce`):
-- is the modern Qualcomm **CLD/qcacld-style** HAL (`NEEDED: libcld80211.so`, LOWI, NAN, `qca_wlan_vendor_features`)
-- exports `init_wifi_vendor_hal_func_table` (what the Android 10 HIDL legacy service needs)
-- sends QCA vendor nl80211 commands that the old **prima/pronto** driver (v3.0.11.85) does not
-  implement → -3 (ESRCH / unsupported vendor cmd).
+Fix (`fix/wifi/manifest-supplicant-1.2.patch`, full file `fix/manifest.xml`):
+```diff
+         <name>android.hardware.wifi.supplicant</name>
+         <transport>hwbinder</transport>
+-        <version>1.0</version>
++        <version>1.2</version>
+ ...
+-        <fqname>@1.0::ISupplicant/default</fqname>
++        <fqname>@1.2::ISupplicant/default</fqname>
+```
+After reboot, `lshal` shows supplicant @1.0, @1.1 and @1.2 registered, and WiFi comes up.
 
-## Stock MIUI HAL — extracted, but NOT a drop-in
-Instead of downloading the full 1 GB ROM, the needed files were pulled straight out of the
-recovery OTA zip with HTTP Range requests (`scripts/extract_stock_wifi_ranged.py`, ~10 MB
-transferred, every file CRC-verified). 50 files; hashes in
-`fix/wifi/stock-miui-V6.6.10.0-wifi-files.sha256`.
-
-Source: `https://bigota.d.miui.com/V6.6.10.0.LXIMICF/miui_MI4iGlobal_V6.6.10.0.LXIMICF_80f20c0908_5.0.zip`
-
-Important: in Android 5 MIUI the HAL is **`/system/lib64/libwifi-hal-qcom.so`** (there is no
-`libwifi-hal.so`). ELF analysis:
-- `NEEDED: libc, libdl, libhardware_legacy, liblog, libm, libnetutils, libnl, libstdc++`
-- exports the bare `wifi_initialize`, `wifi_get_supported_feature_set`, … (C++-mangled), but
-  **no `init_wifi_vendor_hal_func_table`**
-- imports `wifi_load_driver` / `is_wifi_driver_loaded` from Android 5 `libhardware_legacy`
-
-So simply renaming it to `libwifi-hal.so` will **fail to load** on Android 10
-(missing func-table symbol; libstdc++ / old libhardware_legacy ABI).
-
-## Options, best first
-1. **Make the existing HAL tolerate the failure.** Error -3 comes only from the feature query;
-   a HAL that treats "unsupported" as `feature_set = 0` lets the framework continue
-   (this is how most prima-based Android 9/10 ports work: e.g. LineageOS msm8916 trees use
-   `WIFI_HAL_INTERFACE_COMBINATIONS` + prima-compatible `wifi-hal` from
-   `hardware/qcom/wlan` *legacy* branch, or set `WIFI_DRIVER_STATE_CTRL_PARAM`).
-   Look for a ferrari / msm8916 (e.g. `wt88047`, `lettuce`, `harpia`) LineageOS 17.1 build whose
-   `/vendor/lib64/libwifi-hal.so` is the prima flavour, and swap that in.
-2. **Shim** the stock HAL: a small `libwifi-hal.so` that exports
-   `init_wifi_vendor_hal_func_table` and forwards to `libwifi-hal-qcom.so` (also needs the
-   Android 5 deps), or returns WIFI_SUCCESS with 0 features for `get_supported_feature_set`.
-3. **PixysOS v2.4 (Android 9)** — already on disk, reported to flash fine; WiFi likely works.
-
-## Restore
-Back up before any swap:
+Apply with adb (userdebug build):
 ```
 adb root
 adb shell mount -o rw,remount /
-adb pull /vendor/lib64/libwifi-hal.so libwifi-hal.so.lineage
+adb push manifest.xml /vendor/etc/vintf/manifest.xml
+adb shell "chmod 0644 /vendor/etc/vintf/manifest.xml; chcon u:object_r:vendor_configs_file:s0 /vendor/etc/vintf/manifest.xml"
+adb reboot
 ```
+
+## Harmless leftovers
+`acquire_driver_supported_features: requestResponse Error:-3` / `Failed to get wifi Capabilities`
+is still logged. The modern Qualcomm HAL asks prima for QCA vendor features it doesn't have.
+This is non-fatal: features are reported as 0 (no GSCAN/logger/RTT), and normal STA works.
+Same for `wificond: Failed to get NL80211_ATTR_EXT_FEATURES`.
+
+## Earlier investigation (no longer needed)
+The stock MIUI V6.6.10.0 WiFi files were pulled from the recovery OTA with HTTP Range requests
+(`scripts/extract_stock_wifi_ranged.py`; hashes in `fix/wifi/stock-miui-V6.6.10.0-wifi-files.sha256`).
+Its HAL `libwifi-hal-qcom.so` (Android 5) lacks `init_wifi_vendor_hal_func_table` and
+can't replace the Android 10 HAL. It turned out not to be needed.
+
+## Unrelated issue seen
+`thermal-engine` (root, pid ~387) was using about 1000% CPU (load average about 12), which makes the
+phone sluggish and adb slow. Worth looking at next (e.g. the thermal-engine config, or disabling it).

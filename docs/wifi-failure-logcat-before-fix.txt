@@ -1,0 +1,607 @@
+--------- beginning of system
+11-11 10:42:59.640 I/WifiService(  719): WifiService trying to set country code to sg
+--------- beginning of main
+11-11 14:24:13.935 E/WifiNative(  719): Could not get Iface object for interface null
+11-11 14:25:18.441 I/WifiService(  719): setWifiEnabled package=com.android.shell uid=0 enable=false
+11-11 14:25:22.030 I/WifiService(  719): setWifiEnabled package=com.android.shell uid=0 enable=true
+11-11 14:25:22.031 D/WifiController(  719): StaEnabledState.enter()
+11-11 14:25:22.035 W/android.hardware.wifi@1.0-service.legacy(  344): No active wlan interfaces in use! Using default
+11-11 14:25:23.382 D/WificondControl(  719): tearing down interfaces in wificond
+11-11 14:25:23.385 I/WifiHAL (  344): Sent msg on exit sock to unblock poll()
+11-11 14:25:23.385 I/WifiHAL (  344): exit_event_handler, buf=E
+11-11 14:25:23.386 D/WifiHAL (  344): wlan_service_update_sys_param: /proc/sys/net/ipv4/tcp_limit_output_bytes 131072
+11-11 14:25:23.386 D/WifiHAL (  344): wlan_service_update_sys_param: /proc/sys/net/ipv4/tcp_use_userconfig 0
+11-11 14:25:23.386 D/WifiHAL (  344): wlan_service_update_sys_param: /proc/sys/net/ipv4/tcp_adv_win_scale 1
+11-11 14:25:23.386 E/WifiHAL (  344): 1 events were leftover without being freed
+11-11 14:25:23.386 I/android.hardware.wifi@1.0-service.legacy(  344): Legacy HAL stop complete callback received
+11-11 14:25:23.386 I/WifiHAL (  344): wifi_event_loop() exits success
+11-11 14:25:23.388 I/android.hardware.wifi@1.0-service.legacy(  344): Wifi HAL stopped
+11-11 14:25:23.388 I/WifiVendorHal(  719): Vendor Hal stopped
+11-11 14:25:23.388 I/WifiNative(  719): Successfully torn down Iface:{Name=wlan0,Id=13,Type=STA_SCAN}
+11-11 14:25:23.388 E/HalDevMgr(  719): getAllChipInfo: called but mWifi is null!?
+11-11 14:25:23.388 E/HalDevMgr(  719): dispatchAvailableForRequestListeners: no chip info found
+11-11 14:25:23.388 W/HalDevMgr(  719): stopWifi called but mWifi is null!?
+11-11 14:25:23.388 I/WifiNative(  719): Successfully initiated teardown for iface=wlan0
+11-11 14:25:23.389 E/WifiNative(  719): Could not get Iface object for interface null
+11-11 14:25:23.389 W/HalDevMgr(  719): isWifiStarted called but mWifi is null!?
+11-11 14:25:23.403 I/android.hardware.wifi@1.0-service.legacy(  344): Wifi HAL started
+11-11 14:25:23.406 I/WifiVendorHal(  719): Vendor Hal started successfully
+11-11 14:25:23.409 I/SupplicantStaIfaceHal(  719): Starting supplicant using init
+11-11 14:25:23.482 I/wpa_supplicant(19360): Processing hidl events on FD 3
+11-11 14:25:23.487 I/wpa_supplicant(19360): Successfully initialized wpa_supplicant
+11-11 14:25:23.489 I/SupplicantStaIfaceHal(  719): Completed initialization of ISupplicant.
+11-11 14:25:24.487 I/WifiHAL (  344): Initializing wifi
+11-11 14:25:24.493 E/WifiHAL (  344): acquire_driver_supported_features: requestResponse Error:-3
+11-11 14:25:24.494 I/WifiHAL (  344): Failed to get vendor feature set : -1
+11-11 14:25:24.494 E/WifiHAL (  344): wifi_get_logger_supported_feature_set: Error -3 happened. 
+11-11 14:25:24.494 E/WifiHAL (  344): Failed to get supported logger feature set: -3
+11-11 14:25:24.494 E/WifiHAL (  344): get_firmware_bus_max_size_supported: requestResponse Error:-3
+11-11 14:25:24.494 E/WifiHAL (  344): Failed to get supported bus size, error : -3
+11-11 14:25:24.494 E/WifiHAL (  344): wifi_logger_ring_buffers_init: Ring buffer logging feature not supported 0
+11-11 14:25:24.494 E/WifiHAL (  344): Wifi Logger Ring Initialization Failed
+11-11 14:25:24.494 E/WifiHAL (  344): wifi_get_capabilities: GSCAN is not supported by driver
+11-11 14:25:24.494 E/WifiHAL (  344): Failed to get wifi Capabilities, error: -3
+11-11 14:25:24.494 D/WifiHAL (  344): wlan_service_read_sys_param: /proc/sys/net/ipv4/tcp_limit_output_bytes 131072
+11-11 14:25:24.494 D/WifiHAL (  344): wlan_service_read_sys_param: /proc/sys/net/ipv4/tcp_adv_win_scale 1
+11-11 14:25:24.495 I/android.hardware.wifi@1.0-service.legacy(  344): Adding interface handle for p2p0
+11-11 14:25:24.495 I/android.hardware.wifi@1.0-service.legacy(  344): Adding interface handle for wlan0
+11-11 14:25:24.495 W/android.hardware.wifi@1.0-service.legacy(  344): No active wlan interfaces in use! Using default
+11-11 14:25:24.496 W/android.hardware.wifi@1.0-service.legacy(  344): No active wlan interfaces in use! Using default
+11-11 14:25:24.499 I/android.hardware.wifi@1.0-service.legacy(  344): Configured chip in mode 0
+11-11 14:25:24.499 W/android.hardware.wifi@1.0-service.legacy(  344): No active wlan interfaces in use! Using default
+11-11 14:25:24.501 D/HalDevMgr(  719): updateRttController: no one is interested in RTT controllers
+11-11 14:25:24.513 I/WifiHAL (  344): mpdu_size_threshold : 128, aggressive_statistics_gathering : 0
+11-11 14:25:24.513 E/WifiHAL (  344): Handle different, update the handle
+11-11 14:25:24.514 D/WificondControl(  719): Setting up interface for client mode
+11-11 14:25:24.523 E/SupplicantStaIfaceHal(  719): Can't call setupIface, ISupplicantStaIface is null
+11-11 14:25:24.525 E/SupplicantStaIfaceHal(  719): Got zero HIDL supplicant ifaces. Stopping supplicant HIDL startup.
+11-11 14:25:24.525 E/SupplicantStaIfaceHal(  719): setupIface got null iface
+11-11 14:25:24.525 E/WifiNative(  719): Failed to setup iface in supplicant on Iface:{Name=wlan0,Id=14,Type=STA_CONNECTIVITY}
+11-11 14:25:24.527 W/android.hardware.wifi@1.0-service.legacy(  344): No active wlan interfaces in use! Using default
+11-11 14:25:24.529 E/WifiNative(  719): Failed to unregister network observer on Iface:{Name=wlan0,Id=14,Type=STA_CONNECTIVITY}
+11-11 14:25:24.529 E/SupplicantStaIfaceHal(  719): Can't call teardownIface, ISupplicantStaIface is null
+11-11 14:25:24.529 E/WifiNative(  719): Failed to teardown iface in supplicant on Iface:{Name=wlan0,Id=14,Type=STA_CONNECTIVITY}
+11-11 14:25:28.041 I/SupplicantStaIfaceHal(  719): Terminating supplicant using init
+11-11 14:25:28.045 D/SupplicantStaIfaceHal(  719): ISupplicant died: cookie=-9153660524659259200
+11-11 14:25:28.045 D/WificondControl(  719): tearing down interfaces in wificond
+11-11 14:25:28.047 I/WifiHAL (  344): Sent msg on exit sock to unblock poll()
+11-11 14:25:28.047 I/WifiHAL (  344): exit_event_handler, buf=E
+11-11 14:25:28.048 D/WifiHAL (  344): wlan_service_update_sys_param: /proc/sys/net/ipv4/tcp_limit_output_bytes 131072
+11-11 14:25:28.048 D/WifiHAL (  344): wlan_service_update_sys_param: /proc/sys/net/ipv4/tcp_use_userconfig 0
+11-11 14:25:28.048 D/WifiHAL (  344): wlan_service_update_sys_param: /proc/sys/net/ipv4/tcp_adv_win_scale 1
+11-11 14:25:28.048 E/WifiHAL (  344): 1 events were leftover without being freed
+11-11 14:25:28.048 I/android.hardware.wifi@1.0-service.legacy(  344): Legacy HAL stop complete callback received
+11-11 14:25:28.048 I/WifiHAL (  344): wifi_event_loop() exits success
+11-11 14:25:28.050 I/android.hardware.wifi@1.0-service.legacy(  344): Wifi HAL stopped
+11-11 14:25:28.050 I/WifiVendorHal(  719): Vendor Hal stopped
+11-11 14:25:28.051 I/WifiNative(  719): Successfully torn down Iface:{Name=wlan0,Id=14,Type=STA_CONNECTIVITY}
+11-11 14:25:28.051 E/HalDevMgr(  719): getAllChipInfo: called but mWifi is null!?
+11-11 14:25:28.051 E/HalDevMgr(  719): dispatchAvailableForRequestListeners: no chip info found
+11-11 14:25:28.051 W/HalDevMgr(  719): stopWifi called but mWifi is null!?
+11-11 14:25:28.051 I/WifiNative(  719): Successfully initiated teardown for iface=wlan0
+11-11 14:25:28.051 W/HalDevMgr(  719): isWifiStarted called but mWifi is null!?
+11-11 14:25:28.051 W/HalDevMgr(  719): isWifiStarted called but mWifi is null!?
+11-11 14:25:28.052 E/WifiNative(  719): Could not get Iface object for interface null
+11-11 14:25:28.052 W/HalDevMgr(  719): isWifiStarted called but mWifi is null!?
+11-11 14:25:28.052 W/HalDevMgr(  719): isWifiStarted called but mWifi is null!?
+11-11 14:25:28.052 W/SupplicantStaIfaceHal(  719): ISupplicant died: cookie=7
+11-11 14:25:28.052 W/HalDevMgr(  719): isWifiStarted called but mWifi is null!?
+11-11 14:25:28.052 D/WifiController(  719): ClientMode unexpected failure: state unknown
+11-11 14:25:28.068 I/android.hardware.wifi@1.0-service.legacy(  344): Wifi HAL started
+11-11 14:25:28.069 I/WifiVendorHal(  719): Vendor Hal started successfully
+11-11 14:25:29.003 I/WifiHAL (  344): Initializing wifi
+11-11 14:25:29.006 E/WifiHAL (  344): acquire_driver_supported_features: requestResponse Error:-3
+11-11 14:25:29.006 I/WifiHAL (  344): Failed to get vendor feature set : -1
+11-11 14:25:29.006 E/WifiHAL (  344): wifi_get_logger_supported_feature_set: Error -3 happened. 
+11-11 14:25:29.007 E/WifiHAL (  344): Failed to get supported logger feature set: -3
+11-11 14:25:29.007 E/WifiHAL (  344): get_firmware_bus_max_size_supported: requestResponse Error:-3
+11-11 14:25:29.007 E/WifiHAL (  344): Failed to get supported bus size, error : -3
+11-11 14:25:29.007 E/WifiHAL (  344): wifi_logger_ring_buffers_init: Ring buffer logging feature not supported 0
+11-11 14:25:29.007 E/WifiHAL (  344): Wifi Logger Ring Initialization Failed
+11-11 14:25:29.007 E/WifiHAL (  344): wifi_get_capabilities: GSCAN is not supported by driver
+11-11 14:25:29.007 E/WifiHAL (  344): Failed to get wifi Capabilities, error: -3
+11-11 14:25:29.007 D/WifiHAL (  344): wlan_service_read_sys_param: /proc/sys/net/ipv4/tcp_limit_output_bytes 131072
+11-11 14:25:29.007 D/WifiHAL (  344): wlan_service_read_sys_param: /proc/sys/net/ipv4/tcp_adv_win_scale 1
+11-11 14:25:29.009 I/android.hardware.wifi@1.0-service.legacy(  344): Adding interface handle for p2p0
+11-11 14:25:29.009 I/android.hardware.wifi@1.0-service.legacy(  344): Adding interface handle for wlan0
+11-11 14:25:29.009 W/android.hardware.wifi@1.0-service.legacy(  344): No active wlan interfaces in use! Using default
+11-11 14:25:29.009 W/android.hardware.wifi@1.0-service.legacy(  344): No active wlan interfaces in use! Using default
+11-11 14:25:29.011 I/android.hardware.wifi@1.0-service.legacy(  344): Configured chip in mode 0
+11-11 14:25:29.011 W/android.hardware.wifi@1.0-service.legacy(  344): No active wlan interfaces in use! Using default
+11-11 14:25:29.012 D/HalDevMgr(  719): updateRttController: no one is interested in RTT controllers
+11-11 14:25:29.027 I/WifiHAL (  344): mpdu_size_threshold : 128, aggressive_statistics_gathering : 0
+11-11 14:25:29.027 D/WificondControl(  719): Setting up interface for client mode
+11-11 14:25:29.040 I/WifiNative(  719): Interface state changed on Iface:{Name=wlan0,Id=15,Type=STA_SCAN}, isUp=true
+11-11 14:25:29.041 I/WifiNative(  719): Successfully setup Iface:{Name=wlan0,Id=15,Type=STA_SCAN}
+11-11 14:25:29.042 E/SupplicantStaIfaceHal(  719): Method getKeyMgmtCapabilities is not supported in existing HAL
+11-11 14:25:29.044 E/WifiHAL (  344): wifi_get_logger_supported_feature_set: Error -3 happened. 
+11-11 14:25:29.044 E/WifiHAL (  344): wifi_get_logger_supported_feature_set: Error -3 happened. 
+11-11 14:25:29.051 E/WifiNative(  719): Could not get Iface object for interface null
+11-11 14:25:29.052 E/WifiHAL (  344): wifi_get_gscan_capabilities: GSCAN is not supported by driver
+11-11 14:25:29.052 E/WifiVendorHal(  719): getBgScanCapabilities(l.630) failed {.code = ERROR_NOT_SUPPORTED, .description = }
+11-11 14:26:35.528 E/WifiHAL (  344): wifi_get_wake_reason_stats: Wake lock logging feature not supported 0
+11-11 14:26:35.529 E/WifiVendorHal(  719): getWlanWakeReasonCount(l.2103) failed {.code = ERROR_NOT_SUPPORTED, .description = }
+11-11 14:26:43.181 D/wpa_supplicant(19453): wpa_supplicant v2.8-devel-10
+11-11 14:26:43.181 D/wpa_supplicant(19453): Initing hidl control
+11-11 14:26:43.181 I/wpa_supplicant(19453): Processing hidl events on FD 4
+11-11 14:26:43.185 I/wpa_supplicant(19453): Successfully initialized wpa_supplicant
+11-11 14:26:43.185 D/wpa_supplicant(19453): Initializing interface 'wlan0' conf '/vendor/etc/wifi/wpa_supplicant.conf' driver 'nl80211' ctrl_interface 'N/A' bridge 'N/A'
+11-11 14:26:43.185 D/wpa_supplicant(19453): Configuration file '/vendor/etc/wifi/wpa_supplicant.conf' -> '/vendor/etc/wifi/wpa_supplicant.conf'
+11-11 14:26:43.189 D/wpa_supplicant(19453): Reading configuration file '/vendor/etc/wifi/wpa_supplicant.conf'
+11-11 14:26:43.189 D/wpa_supplicant(19453): update_config=1
+11-11 14:26:43.189 D/wpa_supplicant(19453): eapol_version=1
+11-11 14:26:43.189 D/wpa_supplicant(19453): ap_scan=1
+11-11 14:26:43.189 D/wpa_supplicant(19453): fast_reauth=1
+11-11 14:26:43.190 D/wpa_supplicant(19453): pmf=1
+11-11 14:26:43.190 D/wpa_supplicant(19453): p2p_add_cli_chan=1
+11-11 14:26:43.192 D/wpa_supplicant(19453): nl80211: Using driver-based roaming
+11-11 14:26:43.192 D/wpa_supplicant(19453): nl80211: TDLS supported
+11-11 14:26:43.192 D/wpa_supplicant(19453): nl80211: TDLS external setup
+11-11 14:26:43.193 D/wpa_supplicant(19453): nl80211: Supported cipher 00-0f-ac:1
+11-11 14:26:43.193 D/wpa_supplicant(19453): nl80211: Supported cipher 00-0f-ac:5
+11-11 14:26:43.193 D/wpa_supplicant(19453): nl80211: Supported cipher 00-0f-ac:2
+11-11 14:26:43.193 D/wpa_supplicant(19453): nl80211: Supported cipher 00-0f-ac:4
+11-11 14:26:43.193 D/wpa_supplicant(19453): nl80211: Supported cipher 00-14-72:1
+11-11 14:26:43.193 D/wpa_supplicant(19453): nl80211: Supported cipher 00-0f-ac:6
+11-11 14:26:43.193 D/wpa_supplicant(19453): nl80211: Supports Probe Response offload in AP mode
+11-11 14:26:43.193 D/wpa_supplicant(19453): nl80211: Using driver-based off-channel TX
+11-11 14:26:43.193 D/wpa_supplicant(19453): nl80211: Supported vendor command: vendor_id=0x1374 subcmd=9
+11-11 14:26:43.193 D/wpa_supplicant(19453): nl80211: Supported vendor command: vendor_id=0x1374 subcmd=12
+11-11 14:26:43.193 D/wpa_supplicant(19453): nl80211: Supported vendor command: vendor_id=0x1374 subcmd=16
+11-11 14:26:43.193 D/wpa_supplicant(19453): nl80211: Supported vendor command: vendor_id=0x1374 subcmd=14
+11-11 14:26:43.193 D/wpa_supplicant(19453): nl80211: Supported vendor command: vendor_id=0x1374 subcmd=15
+11-11 14:26:43.193 D/wpa_supplicant(19453): nl80211: Supported vendor command: vendor_id=0x1374 subcmd=20
+11-11 14:26:43.193 D/wpa_supplicant(19453): nl80211: Supported vendor command: vendor_id=0x1374 subcmd=21
+11-11 14:26:43.193 D/wpa_supplicant(19453): nl80211: Supported vendor command: vendor_id=0x1374 subcmd=22
+11-11 14:26:43.193 D/wpa_supplicant(19453): nl80211: Supported vendor command: vendor_id=0x1374 subcmd=23
+11-11 14:26:43.193 D/wpa_supplicant(19453): nl80211: Supported vendor command: vendor_id=0x1374 subcmd=24
+11-11 14:26:43.193 D/wpa_supplicant(19453): nl80211: Supported vendor command: vendor_id=0x1374 subcmd=29
+11-11 14:26:43.193 D/wpa_supplicant(19453): nl80211: Supported vendor command: vendor_id=0x1374 subcmd=30
+11-11 14:26:43.193 D/wpa_supplicant(19453): nl80211: Supported vendor command: vendor_id=0x1374 subcmd=34
+11-11 14:26:43.193 D/wpa_supplicant(19453): nl80211: Supported vendor command: vendor_id=0x1374 subcmd=35
+11-11 14:26:43.193 D/wpa_supplicant(19453): nl80211: Supported vendor command: vendor_id=0x1374 subcmd=36
+11-11 14:26:43.193 D/wpa_supplicant(19453): nl80211: Supported vendor command: vendor_id=0x1374 subcmd=38
+11-11 14:26:43.193 D/wpa_supplicant(19453): nl80211: Supported vendor command: vendor_id=0x1374 subcmd=40
+11-11 14:26:43.193 D/wpa_supplicant(19453): nl80211: Supported vendor command: vendor_id=0x1374 subcmd=39
+11-11 14:26:43.193 D/wpa_supplicant(19453): nl80211: Supported vendor command: vendor_id=0x1374 subcmd=42
+11-11 14:26:43.193 D/wpa_supplicant(19453): nl80211: Supported vendor command: vendor_id=0x1374 subcmd=63
+11-11 14:26:43.193 D/wpa_supplicant(19453): nl80211: Supported vendor command: vendor_id=0x1374 subcmd=105
+11-11 14:26:43.193 D/wpa_supplicant(19453): nl80211: Supported vendor command: vendor_id=0x1374 subcmd=62
+11-11 14:26:43.193 D/wpa_supplicant(19453): nl80211: Supported vendor command: vendor_id=0x1374 subcmd=61
+11-11 14:26:43.193 D/wpa_supplicant(19453): nl80211: Supported vendor command: vendor_id=0x1374 subcmd=77
+11-11 14:26:43.193 D/wpa_supplicant(19453): nl80211: Supported vendor command: vendor_id=0x1374 subcmd=80
+11-11 14:26:43.193 D/wpa_supplicant(19453): nl80211: Supported vendor command: vendor_id=0x1374 subcmd=79
+11-11 14:26:43.193 D/wpa_supplicant(19453): nl80211: Supported vendor command: vendor_id=0x1374 subcmd=101
+11-11 14:26:43.193 D/wpa_supplicant(19453): nl80211: Supported vendor command: vendor_id=0x1374 subcmd=74
+11-11 14:26:43.193 D/wpa_supplicant(19453): nl80211: Supported vendor command: vendor_id=0x1374 subcmd=52
+11-11 14:26:43.193 D/wpa_supplicant(19453): nl80211: Supported vendor command: vendor_id=0x1374 subcmd=149
+11-11 14:26:43.193 D/wpa_supplicant(19453): nl80211: Supported vendor command: vendor_id=0x1374 subcmd=150
+11-11 14:26:43.193 D/wpa_supplicant(19453): nl80211: Supported vendor command: vendor_id=0x1374 subcmd=121
+11-11 14:26:43.193 D/wpa_supplicant(19453): nl80211: Supported vendor event: vendor_id=0x1374 subcmd=10
+11-11 14:26:43.193 D/wpa_supplicant(19453): nl80211: Supported vendor event: vendor_id=0x1374 subcmd=14
+11-11 14:26:43.193 D/wpa_supplicant(19453): nl80211: Supported vendor event: vendor_id=0x1374 subcmd=15
+11-11 14:26:43.193 D/wpa_supplicant(19453): nl80211: Supported vendor event: vendor_id=0x1374 subcmd=16
+11-11 14:26:43.193 D/wpa_supplicant(19453): nl80211: Supported vendor event: vendor_id=0x1374 subcmd=17
+11-11 14:26:43.193 D/wpa_supplicant(19453): nl80211: Supported vendor event: vendor_id=0x1374 subcmd=18
+11-11 14:26:43.193 D/wpa_supplicant(19453): nl80211: Supported vendor event: vendor_id=0x1374 subcmd=19
+11-11 14:26:43.193 D/wpa_supplicant(19453): nl80211: Supported vendor event: vendor_id=0x1374 subcmd=20
+11-11 14:26:43.193 D/wpa_supplicant(19453): nl80211: Supported vendor event: vendor_id=0x1374 subcmd=21
+11-11 14:26:43.193 D/wpa_supplicant(19453): nl80211: Supported vendor event: vendor_id=0x1374 subcmd=23
+11-11 14:26:43.193 D/wpa_supplicant(19453): nl80211: Supported vendor event: vendor_id=0x1374 subcmd=24
+11-11 14:26:43.193 D/wpa_supplicant(19453): nl80211: Supported vendor event: vendor_id=0x1374 subcmd=25
+11-11 14:26:43.193 D/wpa_supplicant(19453): nl80211: Supported vendor event: vendor_id=0x1374 subcmd=26
+11-11 14:26:43.193 D/wpa_supplicant(19453): nl80211: Supported vendor event: vendor_id=0x1374 subcmd=27
+11-11 14:26:43.193 D/wpa_supplicant(19453): nl80211: Supported vendor event: vendor_id=0x1374 subcmd=28
+11-11 14:26:43.193 D/wpa_supplicant(19453): nl80211: Supported vendor event: vendor_id=0x1374 subcmd=29
+11-11 14:26:43.193 D/wpa_supplicant(19453): nl80211: Supported vendor event: vendor_id=0x1374 subcmd=30
+11-11 14:26:43.193 D/wpa_supplicant(19453): nl80211: Supported vendor event: vendor_id=0x1374 subcmd=37
+11-11 14:26:43.193 D/wpa_supplicant(19453): nl80211: Supported vendor event: vendor_id=0x1374 subcmd=12
+11-11 14:26:43.193 D/wpa_supplicant(19453): nl80211: Supported vendor event: vendor_id=0x1374 subcmd=61
+11-11 14:26:43.193 D/wpa_supplicant(19453): nl80211: Supported vendor event: vendor_id=0x1374 subcmd=80
+11-11 14:26:43.193 D/wpa_supplicant(19453): nl80211: Supported vendor event: vendor_id=0x1374 subcmd=41
+11-11 14:26:43.193 D/wpa_supplicant(19453): nl80211: Supported vendor event: vendor_id=0x1374 subcmd=150
+11-11 14:26:43.193 D/wpa_supplicant(19453): nl80211: Use separate P2P group interface (driver advertised support)
+11-11 14:26:43.193 D/wpa_supplicant(19453): nl80211: Enable multi-channel concurrent (driver advertised support)
+11-11 14:26:43.193 D/wpa_supplicant(19453): nl80211: interface wlan0 in phy phy15
+11-11 14:26:43.193 D/wpa_supplicant(19453): nl80211: Set mode ifindex 50 iftype 2 (STATION)
+11-11 14:26:43.193 D/wpa_supplicant(19453): nl80211: Subscribe to mgmt frames with non-AP handle 0x7d45c11b80
+11-11 14:26:43.193 D/wpa_supplicant(19453): nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x7d45c11b80 match=0104
+11-11 14:26:43.193 D/wpa_supplicant(19453): nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x7d45c11b80 match=040a
+11-11 14:26:43.193 D/wpa_supplicant(19453): nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x7d45c11b80 match=040b
+11-11 14:26:43.194 D/wpa_supplicant(19453): nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x7d45c11b80 match=040c
+11-11 14:26:43.194 D/wpa_supplicant(19453): nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x7d45c11b80 match=040d
+11-11 14:26:43.194 D/wpa_supplicant(19453): nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x7d45c11b80 match=090a
+11-11 14:26:43.194 D/wpa_supplicant(19453): nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x7d45c11b80 match=090b
+11-11 14:26:43.194 D/wpa_supplicant(19453): nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x7d45c11b80 match=090c
+11-11 14:26:43.194 D/wpa_supplicant(19453): nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x7d45c11b80 match=090d
+11-11 14:26:43.194 D/wpa_supplicant(19453): nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x7d45c11b80 match=0409506f9a09
+11-11 14:26:43.194 D/wpa_supplicant(19453): nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x7d45c11b80 match=7f506f9a09
+11-11 14:26:43.194 D/wpa_supplicant(19453): nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x7d45c11b80 match=0409506f9a1a
+11-11 14:26:43.194 D/wpa_supplicant(19453): nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x7d45c11b80 match=0801
+11-11 14:26:43.194 D/wpa_supplicant(19453): nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x7d45c11b80 match=040e
+11-11 14:26:43.194 D/wpa_supplicant(19453): nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x7d45c11b80 match=06
+11-11 14:26:43.194 D/wpa_supplicant(19453): nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x7d45c11b80 match=0a07
+11-11 14:26:43.194 D/wpa_supplicant(19453): nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x7d45c11b80 match=0a11
+11-11 14:26:43.194 D/wpa_supplicant(19453): nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x7d45c11b80 match=0a0b
+11-11 14:26:43.194 D/wpa_supplicant(19453): nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x7d45c11b80 match=0a1a
+11-11 14:26:43.194 D/wpa_supplicant(19453): nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x7d45c11b80 match=1101
+11-11 14:26:43.195 D/wpa_supplicant(19453): nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x7d45c11b80 match=1102
+11-11 14:26:43.195 D/wpa_supplicant(19453): nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x7d45c11b80 match=0505
+11-11 14:26:43.195 D/wpa_supplicant(19453): nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x7d45c11b80 match=0500
+11-11 14:26:43.195 I/wpa_supplicant(19453): rfkill: Cannot open RFKILL control device
+11-11 14:26:43.195 D/wpa_supplicant(19453): nl80211: RFKILL status not available
+11-11 14:26:43.195 D/wpa_supplicant(19453): netlink: Operstate: ifindex=50 linkmode=1 (userspace-control), operstate=5 (IF_OPER_DORMANT)
+11-11 14:26:43.196 D/wpa_supplicant(19453): Add interface wlan0 to a new radio phy15
+11-11 14:26:43.199 D/wpa_supplicant(19453): nl80211: Regulatory information - country=00
+11-11 14:26:43.199 D/wpa_supplicant(19453): nl80211: 2402-2472 @ 40 MHz 20 mBm
+11-11 14:26:43.199 D/wpa_supplicant(19453): nl80211: 2457-2482 @ 40 MHz 20 mBm (no IR)
+11-11 14:26:43.199 D/wpa_supplicant(19453): nl80211: 2474-2494 @ 20 MHz 20 mBm (no OFDM) (no IR)
+11-11 14:26:43.199 D/wpa_supplicant(19453): nl80211: 5170-5250 @ 80 MHz 20 mBm (no IR)
+11-11 14:26:43.199 D/wpa_supplicant(19453): nl80211: 5250-5330 @ 80 MHz 20 mBm (no IR)
+11-11 14:26:43.199 D/wpa_supplicant(19453): nl80211: 5490-5710 @ 80 MHz 20 mBm (no IR)
+11-11 14:26:43.199 D/wpa_supplicant(19453): nl80211: 5735-5835 @ 80 MHz 20 mBm (no IR)
+11-11 14:26:43.199 D/wpa_supplicant(19453): nl80211: 57240-63720 @ 2160 MHz 0 mBm
+11-11 14:26:43.199 D/wpa_supplicant(19453): nl80211: Added 802.11b mode based on 802.11g information
+11-11 14:26:43.199 D/wpa_supplicant(19453): nl80211: Mode IEEE 802.11g: 2412 2417 2422 2427 2432 2437 2442 2447 2452 2457 2462 2467 2472 2484[NO_IR]
+11-11 14:26:43.199 D/wpa_supplicant(19453): nl80211: Mode IEEE 802.11a: 4920[DISABLED] 4940[DISABLED] 4960[DISABLED] 4980[DISABLED] 5040[DISABLED] 5060[DISABLED] 5080[DISABLED] 5180 5200 5220 5240 5260 5280 5300 5320 5500 5520 5540 5560 5580 5600 5620 5640 5660 5680
+11-11 14:26:43.199 D/wpa_supplicant(19453): nl80211: Mode IEEE 802.11b: 2412 2417 2422 2427 2432 2437 2442 2447 2452 2457 2462 2467 2472 2484[NO_IR]
+11-11 14:26:44.277 D/wpa_supplicant(19453): wlan0: Own MAC address: 14:f6:5a:5f:f6:c3
+11-11 14:26:44.277 D/wpa_supplicant(19453): wpa_driver_nl80211_set_key: ifindex=50 (wlan0) alg=0 addr=0x0 key_idx=0 set_tx=0 seq_len=0 key_len=0
+11-11 14:26:44.277 D/wpa_supplicant(19453): wpa_driver_nl80211_set_key: ifindex=50 (wlan0) alg=0 addr=0x0 key_idx=1 set_tx=0 seq_len=0 key_len=0
+11-11 14:26:44.277 D/wpa_supplicant(19453): wpa_driver_nl80211_set_key: ifindex=50 (wlan0) alg=0 addr=0x0 key_idx=2 set_tx=0 seq_len=0 key_len=0
+11-11 14:26:44.277 D/wpa_supplicant(19453): wpa_driver_nl80211_set_key: ifindex=50 (wlan0) alg=0 addr=0x0 key_idx=3 set_tx=0 seq_len=0 key_len=0
+11-11 14:26:44.277 D/wpa_supplicant(19453): wpa_driver_nl80211_set_key: ifindex=50 (wlan0) alg=0 addr=0x0 key_idx=4 set_tx=0 seq_len=0 key_len=0
+11-11 14:26:44.277 D/wpa_supplicant(19453): wpa_driver_nl80211_set_key: ifindex=50 (wlan0) alg=0 addr=0x0 key_idx=5 set_tx=0 seq_len=0 key_len=0
+11-11 14:26:44.277 D/wpa_supplicant(19453): wlan0: RSN: flushing PMKID list in the driver
+11-11 14:26:44.277 D/wpa_supplicant(19453): nl80211: Flush PMKIDs
+11-11 14:26:44.277 D/wpa_supplicant(19453): wlan0: State: DISCONNECTED -> INACTIVE
+11-11 14:26:44.277 D/wpa_supplicant(19453): Notifying state change event to hidl control: 2
+11-11 14:26:44.312 D/wpa_supplicant(19453): TDLS: TDLS operation supported by driver
+11-11 14:26:44.313 D/wpa_supplicant(19453): TDLS: Driver uses external link setup
+11-11 14:26:44.313 D/wpa_supplicant(19453): TDLS: Driver does not support TDLS channel switching
+11-11 14:26:44.316 D/wpa_supplicant(19453): wlan0: WPS: UUID based on MAC address: d9a1437b-1368-593c-8258-244807f9e342
+11-11 14:26:44.317 D/wpa_supplicant(19453): EAPOL: SUPP_PAE entering state DISCONNECTED
+11-11 14:26:44.317 D/wpa_supplicant(19453): EAPOL: Supplicant port status: Unauthorized
+11-11 14:26:44.317 D/wpa_supplicant(19453): nl80211: Skip set_supp_port(unauthorized) while not associated
+11-11 14:26:44.317 D/wpa_supplicant(19453): EAPOL: KEY_RX entering state NO_KEY_RECEIVE
+11-11 14:26:44.317 D/wpa_supplicant(19453): EAPOL: SUPP_BE entering state INITIALIZE
+11-11 14:26:44.317 D/wpa_supplicant(19453): EAP: EAP entering state DISABLED
+11-11 14:26:44.317 D/wpa_supplicant(19453): P2P: Add operating class 81
+11-11 14:26:44.317 D/wpa_supplicant(19453): P2P: Channels - hexdump(len=13): 01 02 03 04 05 06 07 08 09 0a 0b 0c 0d
+11-11 14:26:44.317 D/wpa_supplicant(19453): P2P: Add operating class 115
+11-11 14:26:44.317 D/wpa_supplicant(19453): P2P: Channels - hexdump(len=4): 24 28 2c 30
+11-11 14:26:44.317 D/wpa_supplicant(19453): P2P: Add operating class 116
+11-11 14:26:44.317 D/wpa_supplicant(19453): P2P: Channels - hexdump(len=2): 24 2c
+11-11 14:26:44.317 D/wpa_supplicant(19453): P2P: Add operating class 117
+11-11 14:26:44.317 D/wpa_supplicant(19453): P2P: Channels - hexdump(len=2): 28 30
+11-11 14:26:44.317 D/wpa_supplicant(19453): P2P: Add operating class 124
+11-11 14:26:44.317 D/wpa_supplicant(19453): P2P: Channels - hexdump(len=4): 95 99 9d a1
+11-11 14:26:44.317 D/wpa_supplicant(19453): P2P: Add operating class 125
+11-11 14:26:44.317 D/wpa_supplicant(19453): P2P: Channels - hexdump(len=5): 95 99 9d a1 a5
+11-11 14:26:44.317 D/wpa_supplicant(19453): P2P: Add operating class 126
+11-11 14:26:44.317 D/wpa_supplicant(19453): P2P: Channels - hexdump(len=2): 95 9d
+11-11 14:26:44.317 D/wpa_supplicant(19453): P2P: Add operating class 127
+11-11 14:26:44.317 D/wpa_supplicant(19453): P2P: Channels - hexdump(len=2): 99 a1
+11-11 14:26:44.317 D/wpa_supplicant(19453): P2P: Add operating class 130
+11-11 14:26:44.317 D/wpa_supplicant(19453): P2P: Channels - hexdump(len=19): 24 28 2c 30 34 38 3c 40 64 68 6c 70 74 78 7c 80 84 88 8c
+11-11 14:26:44.318 D/wpa_supplicant(19453): P2P: Own listen channel: 81:1
+11-11 14:26:44.319 D/wpa_supplicant(19453): P2P: Random operating channel: 81:6
+11-11 14:26:44.321 D/wpa_supplicant(19453): P2P: initialized
+11-11 14:26:44.321 D/wpa_supplicant(19453): P2P: channels: 81:1,2,3,4,5,6,7,8,9,10,11,12,13 115:36,40,44,48 116:36,44 117:40,48 124:149,153,157,161 125:149,153,157,161,165 126:149,157 127:153,161 130:36,40,44,48,52,56,60,64,100,104,108,112,116,120,124,128,132,136,140
+11-11 14:26:44.321 D/wpa_supplicant(19453): P2P: cli_channels:
+11-11 14:26:44.321 D/wpa_supplicant(19453): nl80211: Scan default IEs - hexdump(len=6): 7f 04 00 00 0a 02
+11-11 14:26:44.321 E/wpa_supplicant(19453): nl80211: Set scan default IEs failed: ret=-524 (Unknown error 524)
+11-11 14:26:44.321 D/wpa_supplicant(19453): Registering interface to hidl control: wlan0
+11-11 14:26:44.321 D/wpa_supplicant(19453): wlan0: Added interface wlan0
+11-11 14:26:44.321 D/wpa_supplicant(19453): wlan0: State: INACTIVE -> DISCONNECTED
+11-11 14:26:44.321 D/wpa_supplicant(19453): nl80211: Set wlan0 operstate 0->0 (DORMANT)
+11-11 14:26:44.321 D/wpa_supplicant(19453): netlink: Operstate: ifindex=50 linkmode=-1 (no change), operstate=5 (IF_OPER_DORMANT)
+11-11 14:26:44.321 D/wpa_supplicant(19453): Notifying state change event to hidl control: 0
+11-11 14:26:44.321 D/wpa_supplicant(19453): wlan0: Determining shared radio frequencies (max len 2)
+11-11 14:26:44.321 D/wpa_supplicant(19453): wlan0: Shared frequencies (len=0): completed iteration
+11-11 14:26:44.321 D/wpa_supplicant(19453): P2P: Add operating class 81
+11-11 14:26:44.321 D/wpa_supplicant(19453): P2P: Channels - hexdump(len=13): 01 02 03 04 05 06 07 08 09 0a 0b 0c 0d
+11-11 14:26:44.321 D/wpa_supplicant(19453): P2P: Add operating class 115
+11-11 14:26:44.321 D/wpa_supplicant(19453): P2P: Channels - hexdump(len=4): 24 28 2c 30
+11-11 14:26:44.321 D/wpa_supplicant(19453): P2P: Add operating class 116
+11-11 14:26:44.321 D/wpa_supplicant(19453): P2P: Channels - hexdump(len=2): 24 2c
+11-11 14:26:44.321 D/wpa_supplicant(19453): P2P: Add operating class 117
+11-11 14:26:44.321 D/wpa_supplicant(19453): P2P: Channels - hexdump(len=2): 28 30
+11-11 14:26:44.321 D/wpa_supplicant(19453): P2P: Add operating class 124
+11-11 14:26:44.321 D/wpa_supplicant(19453): P2P: Channels - hexdump(len=4): 95 99 9d a1
+11-11 14:26:44.321 D/wpa_supplicant(19453): P2P: Add operating class 125
+11-11 14:26:44.321 D/wpa_supplicant(19453): P2P: Channels - hexdump(len=5): 95 99 9d a1 a5
+11-11 14:26:44.321 D/wpa_supplicant(19453): P2P: Add operating class 126
+11-11 14:26:44.321 D/wpa_supplicant(19453): P2P: Channels - hexdump(len=2): 95 9d
+11-11 14:26:44.321 D/wpa_supplicant(19453): P2P: Add operating class 127
+11-11 14:26:44.321 D/wpa_supplicant(19453): P2P: Channels - hexdump(len=2): 99 a1
+11-11 14:26:44.321 D/wpa_supplicant(19453): P2P: Add operating class 130
+11-11 14:26:44.321 D/wpa_supplicant(19453): P2P: Channels - hexdump(len=19): 24 28 2c 30 34 38 3c 40 64 68 6c 70 74 78 7c 80 84 88 8c
+11-11 14:26:44.321 D/wpa_supplicant(19453): P2P: Update channel list
+11-11 14:26:44.321 D/wpa_supplicant(19453): P2P: channels: 81:1,2,3,4,5,6,7,8,9,10,11,12,13 115:36,40,44,48 116:36,44 117:40,48 124:149,153,157,161 125:149,153,157,161,165 126:149,157 127:153,161 130:36,40,44,48,52,56,60,64,100,104,108,112,116,120,124,128,132,136,140
+11-11 14:26:44.321 D/wpa_supplicant(19453): P2P: cli_channels:
+11-11 14:26:44.322 I/SupplicantStaIfaceHal(  719): Completed initialization of ISupplicant.
+11-11 14:26:45.318 D/wpa_supplicant(19453): EAPOL: disable timer tick
+11-11 14:26:49.138 D/wpa_supplicant(19453): wlan0: Removing interface wlan0
+11-11 14:26:49.138 D/wpa_supplicant(19453): wlan0: Request to deauthenticate - bssid=00:00:00:00:00:00 pending_bssid=00:00:00:00:00:00 reason=3 state=DISCONNECTED
+11-11 14:26:49.138 D/wpa_supplicant(19453): TDLS: Tear down peers
+11-11 14:26:49.138 D/wpa_supplicant(19453): nl80211: Data frame filter flags=0x0
+11-11 14:26:49.138 E/wpa_supplicant(19453): nl80211: Failed to open /proc/sys/net/ipv4/conf/wlan0/drop_unicast_in_l2_multicast: No such file or directory
+11-11 14:26:49.138 E/wpa_supplicant(19453): nl80211: Failed to set IPv4 unicast in multicast filter
+11-11 14:26:49.138 D/wpa_supplicant(19453): wlan0: State: DISCONNECTED -> DISCONNECTED
+11-11 14:26:49.138 D/wpa_supplicant(19453): nl80211: Set wlan0 operstate 0->0 (DORMANT)
+11-11 14:26:49.138 D/wpa_supplicant(19453): netlink: Operstate: ifindex=50 linkmode=-1 (no change), operstate=5 (IF_OPER_DORMANT)
+11-11 14:26:49.138 D/wpa_supplicant(19453): EAPOL: External notification - portEnabled=0
+11-11 14:26:49.138 D/wpa_supplicant(19453): EAPOL: External notification - portValid=0
+11-11 14:26:52.328 D/wpa_supplicant(19453): wlan0: WPA: Clear old PMK and PTK
+11-11 14:26:52.328 D/wpa_supplicant(19453): wlan0: Cancelling delayed sched scan
+11-11 14:26:52.328 D/wpa_supplicant(19453): wlan0: Cancelling scan request
+11-11 14:26:52.328 D/wpa_supplicant(19453): wlan0: Cancelling authentication timeout
+11-11 14:26:52.329 D/wpa_supplicant(19453): Off-channel: Clear pending Action frame TX (pending_action_tx=0x0
+11-11 14:26:52.329 D/wpa_supplicant(19453): nl80211: Data frame filter flags=0x0
+11-11 14:26:52.329 E/wpa_supplicant(19453): nl80211: Failed to open /proc/sys/net/ipv4/conf/wlan0/drop_unicast_in_l2_multicast: No such file or directory
+11-11 14:26:52.329 E/wpa_supplicant(19453): nl80211: Failed to set IPv4 unicast in multicast filter
+11-11 14:26:52.329 D/wpa_supplicant(19453): HS20: Delete all stored icons
+11-11 14:26:52.329 D/wpa_supplicant(19453): Off-channel: Action frame sequence done notification: pending_action_tx=0x0 drv_offchan_tx=1 action_tx_wait_time=0 off_channel_freq=0 roc_waiting_drv_freq=0
+11-11 14:26:52.338 D/wpa_supplicant(19453): wlan0: P2P: Disable P2P since removing the management interface is being removed
+11-11 14:26:52.339 D/wpa_supplicant(19453): P2P: All ASP advertisements flushed
+11-11 14:26:52.339 D/wpa_supplicant(19453): P2P: Disabling Extended Listen Timing
+11-11 14:26:52.339 D/wpa_supplicant(19453): P2P: Stopping find
+11-11 14:26:52.339 D/wpa_supplicant(19453): P2P: Clear timeout (state=IDLE)
+11-11 14:26:52.339 D/wpa_supplicant(19453): P2P: State IDLE -> IDLE
+11-11 14:26:52.339 D/wpa_supplicant(19453): P2P: All ASP advertisements flushed
+11-11 14:26:52.339 D/wpa_supplicant(19453): Remove interface wlan0 from radio phy15
+11-11 14:26:52.339 D/wpa_supplicant(19453): Remove radio phy15
+11-11 14:26:52.339 I/wpa_supplicant(19453): nl80211: deinit ifname=wlan0 disabled_11b_rates=0
+11-11 14:26:52.388 D/wpa_supplicant(19453): nl80211: Remove monitor interface: refcount=0
+11-11 14:26:52.388 D/wpa_supplicant(19453): netlink: Operstate: ifindex=50 linkmode=0 (kernel-control), operstate=6 (IF_OPER_UP)
+11-11 14:26:52.388 D/wpa_supplicant(19453): nl80211: Set mode ifindex 50 iftype 2 (STATION)
+11-11 14:26:52.389 D/wpa_supplicant(19453): nl80211: Unsubscribe mgmt frames handle 0x888888f5cd499309 (mode change)
+11-11 14:26:52.389 D/wpa_supplicant(19453): Deregistering interface from hidl control: wlan0
+11-11 14:26:52.389 I/wpa_supplicant(19453): wlan0: CTRL-EVENT-TERMINATING 
+11-11 14:26:52.389 D/wpa_supplicant(19453): Deiniting hidl control
+11-11 14:26:52.392 W/SupplicantStaIfaceHal(  719): ISupplicant died: cookie=8
+11-11 14:26:58.008 E/WifiHAL (  344): Packet monitoring is not yet triggered
+11-11 14:26:58.008 E/WifiVendorHal(  719): getTxPktFates(l.1857) failed {.code = ERROR_NOT_AVAILABLE, .description = }
+11-11 14:26:58.009 E/WifiHAL (  344): Packet monitoring is not yet triggered
+11-11 14:26:58.009 E/WifiVendorHal(  719): getRxPktFates(l.1899) failed {.code = ERROR_NOT_AVAILABLE, .description = }
+11-11 14:26:59.085 D/wpa_supplicant(19462): wpa_supplicant v2.8-devel-10
+11-11 14:26:59.085 D/wpa_supplicant(19462): Initing hidl control
+11-11 14:26:59.085 I/wpa_supplicant(19462): Processing hidl events on FD 4
+11-11 14:26:59.088 I/wpa_supplicant(19462): Successfully initialized wpa_supplicant
+11-11 14:26:59.088 D/wpa_supplicant(19462): Initializing interface 'wlan0' conf '/vendor/etc/wifi/wpa_supplicant.conf' driver 'nl80211' ctrl_interface 'N/A' bridge 'N/A'
+11-11 14:26:59.088 D/wpa_supplicant(19462): Configuration file '/vendor/etc/wifi/wpa_supplicant.conf' -> '/vendor/etc/wifi/wpa_supplicant.conf'
+11-11 14:26:59.088 D/wpa_supplicant(19462): Reading configuration file '/vendor/etc/wifi/wpa_supplicant.conf'
+11-11 14:26:59.089 D/wpa_supplicant(19462): update_config=1
+11-11 14:26:59.089 D/wpa_supplicant(19462): eapol_version=1
+11-11 14:26:59.089 D/wpa_supplicant(19462): ap_scan=1
+11-11 14:26:59.089 D/wpa_supplicant(19462): fast_reauth=1
+11-11 14:26:59.089 D/wpa_supplicant(19462): pmf=1
+11-11 14:26:59.089 D/wpa_supplicant(19462): p2p_add_cli_chan=1
+11-11 14:26:59.090 D/wpa_supplicant(19462): nl80211: Using driver-based roaming
+11-11 14:26:59.090 D/wpa_supplicant(19462): nl80211: TDLS supported
+11-11 14:26:59.090 D/wpa_supplicant(19462): nl80211: TDLS external setup
+11-11 14:26:59.090 D/wpa_supplicant(19462): nl80211: Supported cipher 00-0f-ac:1
+11-11 14:26:59.090 D/wpa_supplicant(19462): nl80211: Supported cipher 00-0f-ac:5
+11-11 14:26:59.090 D/wpa_supplicant(19462): nl80211: Supported cipher 00-0f-ac:2
+11-11 14:26:59.090 D/wpa_supplicant(19462): nl80211: Supported cipher 00-0f-ac:4
+11-11 14:26:59.090 D/wpa_supplicant(19462): nl80211: Supported cipher 00-14-72:1
+11-11 14:26:59.090 D/wpa_supplicant(19462): nl80211: Supported cipher 00-0f-ac:6
+11-11 14:26:59.090 D/wpa_supplicant(19462): nl80211: Supports Probe Response offload in AP mode
+11-11 14:26:59.090 D/wpa_supplicant(19462): nl80211: Using driver-based off-channel TX
+11-11 14:26:59.091 D/wpa_supplicant(19462): nl80211: Supported vendor command: vendor_id=0x1374 subcmd=9
+11-11 14:26:59.091 D/wpa_supplicant(19462): nl80211: Supported vendor command: vendor_id=0x1374 subcmd=12
+11-11 14:26:59.091 D/wpa_supplicant(19462): nl80211: Supported vendor command: vendor_id=0x1374 subcmd=16
+11-11 14:26:59.091 D/wpa_supplicant(19462): nl80211: Supported vendor command: vendor_id=0x1374 subcmd=14
+11-11 14:26:59.091 D/wpa_supplicant(19462): nl80211: Supported vendor command: vendor_id=0x1374 subcmd=15
+11-11 14:26:59.091 D/wpa_supplicant(19462): nl80211: Supported vendor command: vendor_id=0x1374 subcmd=20
+11-11 14:26:59.091 D/wpa_supplicant(19462): nl80211: Supported vendor command: vendor_id=0x1374 subcmd=21
+11-11 14:26:59.091 D/wpa_supplicant(19462): nl80211: Supported vendor command: vendor_id=0x1374 subcmd=22
+11-11 14:26:59.091 D/wpa_supplicant(19462): nl80211: Supported vendor command: vendor_id=0x1374 subcmd=23
+11-11 14:26:59.091 D/wpa_supplicant(19462): nl80211: Supported vendor command: vendor_id=0x1374 subcmd=24
+11-11 14:26:59.091 D/wpa_supplicant(19462): nl80211: Supported vendor command: vendor_id=0x1374 subcmd=29
+11-11 14:26:59.091 D/wpa_supplicant(19462): nl80211: Supported vendor command: vendor_id=0x1374 subcmd=30
+11-11 14:26:59.091 D/wpa_supplicant(19462): nl80211: Supported vendor command: vendor_id=0x1374 subcmd=34
+11-11 14:26:59.091 D/wpa_supplicant(19462): nl80211: Supported vendor command: vendor_id=0x1374 subcmd=35
+11-11 14:26:59.091 D/wpa_supplicant(19462): nl80211: Supported vendor command: vendor_id=0x1374 subcmd=36
+11-11 14:26:59.091 D/wpa_supplicant(19462): nl80211: Supported vendor command: vendor_id=0x1374 subcmd=38
+11-11 14:26:59.091 D/wpa_supplicant(19462): nl80211: Supported vendor command: vendor_id=0x1374 subcmd=40
+11-11 14:26:59.091 D/wpa_supplicant(19462): nl80211: Supported vendor command: vendor_id=0x1374 subcmd=39
+11-11 14:26:59.091 D/wpa_supplicant(19462): nl80211: Supported vendor command: vendor_id=0x1374 subcmd=42
+11-11 14:26:59.091 D/wpa_supplicant(19462): nl80211: Supported vendor command: vendor_id=0x1374 subcmd=63
+11-11 14:26:59.091 D/wpa_supplicant(19462): nl80211: Supported vendor command: vendor_id=0x1374 subcmd=105
+11-11 14:26:59.091 D/wpa_supplicant(19462): nl80211: Supported vendor command: vendor_id=0x1374 subcmd=62
+11-11 14:26:59.091 D/wpa_supplicant(19462): nl80211: Supported vendor command: vendor_id=0x1374 subcmd=61
+11-11 14:26:59.091 D/wpa_supplicant(19462): nl80211: Supported vendor command: vendor_id=0x1374 subcmd=77
+11-11 14:26:59.091 D/wpa_supplicant(19462): nl80211: Supported vendor command: vendor_id=0x1374 subcmd=80
+11-11 14:26:59.091 D/wpa_supplicant(19462): nl80211: Supported vendor command: vendor_id=0x1374 subcmd=79
+11-11 14:26:59.091 D/wpa_supplicant(19462): nl80211: Supported vendor command: vendor_id=0x1374 subcmd=101
+11-11 14:26:59.091 D/wpa_supplicant(19462): nl80211: Supported vendor command: vendor_id=0x1374 subcmd=74
+11-11 14:26:59.091 D/wpa_supplicant(19462): nl80211: Supported vendor command: vendor_id=0x1374 subcmd=52
+11-11 14:26:59.091 D/wpa_supplicant(19462): nl80211: Supported vendor command: vendor_id=0x1374 subcmd=149
+11-11 14:26:59.091 D/wpa_supplicant(19462): nl80211: Supported vendor command: vendor_id=0x1374 subcmd=150
+11-11 14:26:59.091 D/wpa_supplicant(19462): nl80211: Supported vendor command: vendor_id=0x1374 subcmd=121
+11-11 14:26:59.091 D/wpa_supplicant(19462): nl80211: Supported vendor event: vendor_id=0x1374 subcmd=10
+11-11 14:26:59.091 D/wpa_supplicant(19462): nl80211: Supported vendor event: vendor_id=0x1374 subcmd=14
+11-11 14:26:59.091 D/wpa_supplicant(19462): nl80211: Supported vendor event: vendor_id=0x1374 subcmd=15
+11-11 14:26:59.091 D/wpa_supplicant(19462): nl80211: Supported vendor event: vendor_id=0x1374 subcmd=16
+11-11 14:26:59.091 D/wpa_supplicant(19462): nl80211: Supported vendor event: vendor_id=0x1374 subcmd=17
+11-11 14:26:59.091 D/wpa_supplicant(19462): nl80211: Supported vendor event: vendor_id=0x1374 subcmd=18
+11-11 14:26:59.091 D/wpa_supplicant(19462): nl80211: Supported vendor event: vendor_id=0x1374 subcmd=19
+11-11 14:26:59.091 D/wpa_supplicant(19462): nl80211: Supported vendor event: vendor_id=0x1374 subcmd=20
+11-11 14:26:59.091 D/wpa_supplicant(19462): nl80211: Supported vendor event: vendor_id=0x1374 subcmd=21
+11-11 14:26:59.091 D/wpa_supplicant(19462): nl80211: Supported vendor event: vendor_id=0x1374 subcmd=23
+11-11 14:26:59.091 D/wpa_supplicant(19462): nl80211: Supported vendor event: vendor_id=0x1374 subcmd=24
+11-11 14:26:59.091 D/wpa_supplicant(19462): nl80211: Supported vendor event: vendor_id=0x1374 subcmd=25
+11-11 14:26:59.091 D/wpa_supplicant(19462): nl80211: Supported vendor event: vendor_id=0x1374 subcmd=26
+11-11 14:26:59.091 D/wpa_supplicant(19462): nl80211: Supported vendor event: vendor_id=0x1374 subcmd=27
+11-11 14:26:59.091 D/wpa_supplicant(19462): nl80211: Supported vendor event: vendor_id=0x1374 subcmd=28
+11-11 14:26:59.091 D/wpa_supplicant(19462): nl80211: Supported vendor event: vendor_id=0x1374 subcmd=29
+11-11 14:26:59.091 D/wpa_supplicant(19462): nl80211: Supported vendor event: vendor_id=0x1374 subcmd=30
+11-11 14:26:59.091 D/wpa_supplicant(19462): nl80211: Supported vendor event: vendor_id=0x1374 subcmd=37
+11-11 14:26:59.091 D/wpa_supplicant(19462): nl80211: Supported vendor event: vendor_id=0x1374 subcmd=12
+11-11 14:26:59.091 D/wpa_supplicant(19462): nl80211: Supported vendor event: vendor_id=0x1374 subcmd=61
+11-11 14:26:59.091 D/wpa_supplicant(19462): nl80211: Supported vendor event: vendor_id=0x1374 subcmd=80
+11-11 14:26:59.091 D/wpa_supplicant(19462): nl80211: Supported vendor event: vendor_id=0x1374 subcmd=41
+11-11 14:26:59.091 D/wpa_supplicant(19462): nl80211: Supported vendor event: vendor_id=0x1374 subcmd=150
+11-11 14:26:59.091 D/wpa_supplicant(19462): nl80211: Use separate P2P group interface (driver advertised support)
+11-11 14:26:59.091 D/wpa_supplicant(19462): nl80211: Enable multi-channel concurrent (driver advertised support)
+11-11 14:26:59.091 D/wpa_supplicant(19462): nl80211: interface wlan0 in phy phy15
+11-11 14:26:59.091 D/wpa_supplicant(19462): nl80211: Set mode ifindex 50 iftype 2 (STATION)
+11-11 14:26:59.091 D/wpa_supplicant(19462): nl80211: Subscribe to mgmt frames with non-AP handle 0x7d19e11b80
+11-11 14:26:59.091 D/wpa_supplicant(19462): nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x7d19e11b80 match=0104
+11-11 14:26:59.091 D/wpa_supplicant(19462): nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x7d19e11b80 match=040a
+11-11 14:26:59.091 D/wpa_supplicant(19462): nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x7d19e11b80 match=040b
+11-11 14:26:59.091 D/wpa_supplicant(19462): nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x7d19e11b80 match=040c
+11-11 14:26:59.091 D/wpa_supplicant(19462): nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x7d19e11b80 match=040d
+11-11 14:26:59.091 D/wpa_supplicant(19462): nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x7d19e11b80 match=090a
+11-11 14:26:59.091 D/wpa_supplicant(19462): nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x7d19e11b80 match=090b
+11-11 14:26:59.092 D/wpa_supplicant(19462): nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x7d19e11b80 match=090c
+11-11 14:26:59.092 D/wpa_supplicant(19462): nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x7d19e11b80 match=090d
+11-11 14:26:59.092 D/wpa_supplicant(19462): nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x7d19e11b80 match=0409506f9a09
+11-11 14:26:59.092 D/wpa_supplicant(19462): nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x7d19e11b80 match=7f506f9a09
+11-11 14:26:59.092 D/wpa_supplicant(19462): nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x7d19e11b80 match=0409506f9a1a
+11-11 14:26:59.092 D/wpa_supplicant(19462): nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x7d19e11b80 match=0801
+11-11 14:26:59.092 D/wpa_supplicant(19462): nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x7d19e11b80 match=040e
+11-11 14:26:59.092 D/wpa_supplicant(19462): nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x7d19e11b80 match=06
+11-11 14:26:59.092 D/wpa_supplicant(19462): nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x7d19e11b80 match=0a07
+11-11 14:26:59.092 D/wpa_supplicant(19462): nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x7d19e11b80 match=0a11
+11-11 14:26:59.092 D/wpa_supplicant(19462): nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x7d19e11b80 match=0a0b
+11-11 14:26:59.092 D/wpa_supplicant(19462): nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x7d19e11b80 match=0a1a
+11-11 14:26:59.092 D/wpa_supplicant(19462): nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x7d19e11b80 match=1101
+11-11 14:26:59.092 D/wpa_supplicant(19462): nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x7d19e11b80 match=1102
+11-11 14:26:59.092 D/wpa_supplicant(19462): nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x7d19e11b80 match=0505
+11-11 14:26:59.093 D/wpa_supplicant(19462): nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x7d19e11b80 match=0500
+11-11 14:26:59.093 I/wpa_supplicant(19462): rfkill: Cannot open RFKILL control device
+11-11 14:26:59.093 D/wpa_supplicant(19462): nl80211: RFKILL status not available
+11-11 14:26:59.093 D/wpa_supplicant(19462): netlink: Operstate: ifindex=50 linkmode=1 (userspace-control), operstate=5 (IF_OPER_DORMANT)
+11-11 14:26:59.094 D/wpa_supplicant(19462): Add interface wlan0 to a new radio phy15
+11-11 14:26:59.094 D/wpa_supplicant(19462): nl80211: Regulatory information - country=00
+11-11 14:26:59.094 D/wpa_supplicant(19462): nl80211: 2402-2472 @ 40 MHz 20 mBm
+11-11 14:26:59.094 D/wpa_supplicant(19462): nl80211: 2457-2482 @ 40 MHz 20 mBm (no IR)
+11-11 14:26:59.094 D/wpa_supplicant(19462): nl80211: 2474-2494 @ 20 MHz 20 mBm (no OFDM) (no IR)
+11-11 14:26:59.094 D/wpa_supplicant(19462): nl80211: 5170-5250 @ 80 MHz 20 mBm (no IR)
+11-11 14:26:59.094 D/wpa_supplicant(19462): nl80211: 5250-5330 @ 80 MHz 20 mBm (no IR)
+11-11 14:26:59.094 D/wpa_supplicant(19462): nl80211: 5490-5710 @ 80 MHz 20 mBm (no IR)
+11-11 14:26:59.094 D/wpa_supplicant(19462): nl80211: 5735-5835 @ 80 MHz 20 mBm (no IR)
+11-11 14:26:59.094 D/wpa_supplicant(19462): nl80211: 57240-63720 @ 2160 MHz 0 mBm
+11-11 14:26:59.094 D/wpa_supplicant(19462): nl80211: Added 802.11b mode based on 802.11g information
+11-11 14:26:59.094 D/wpa_supplicant(19462): nl80211: Mode IEEE 802.11g: 2412 2417 2422 2427 2432 2437 2442 2447 2452 2457 2462 2467 2472 2484[NO_IR]
+11-11 14:26:59.094 D/wpa_supplicant(19462): nl80211: Mode IEEE 802.11a: 4920[DISABLED] 4940[DISABLED] 4960[DISABLED] 4980[DISABLED] 5040[DISABLED] 5060[DISABLED] 5080[DISABLED] 5180 5200 5220 5240 5260 5280 5300 5320 5500 5520 5540 5560 5580 5600 5620 5640 5660 5680
+11-11 14:26:59.094 D/wpa_supplicant(19462): nl80211: Mode IEEE 802.11b: 2412 2417 2422 2427 2432 2437 2442 2447 2452 2457 2462 2467 2472 2484[NO_IR]
+11-11 14:27:00.185 D/wpa_supplicant(19462): wlan0: Own MAC address: 14:f6:5a:5f:f6:c3
+11-11 14:27:00.185 D/wpa_supplicant(19462): wpa_driver_nl80211_set_key: ifindex=50 (wlan0) alg=0 addr=0x0 key_idx=0 set_tx=0 seq_len=0 key_len=0
+11-11 14:27:00.185 D/wpa_supplicant(19462): wpa_driver_nl80211_set_key: ifindex=50 (wlan0) alg=0 addr=0x0 key_idx=1 set_tx=0 seq_len=0 key_len=0
+11-11 14:27:00.185 D/wpa_supplicant(19462): wpa_driver_nl80211_set_key: ifindex=50 (wlan0) alg=0 addr=0x0 key_idx=2 set_tx=0 seq_len=0 key_len=0
+11-11 14:27:00.185 D/wpa_supplicant(19462): wpa_driver_nl80211_set_key: ifindex=50 (wlan0) alg=0 addr=0x0 key_idx=3 set_tx=0 seq_len=0 key_len=0
+11-11 14:27:00.185 D/wpa_supplicant(19462): wpa_driver_nl80211_set_key: ifindex=50 (wlan0) alg=0 addr=0x0 key_idx=4 set_tx=0 seq_len=0 key_len=0
+11-11 14:27:00.185 D/wpa_supplicant(19462): wpa_driver_nl80211_set_key: ifindex=50 (wlan0) alg=0 addr=0x0 key_idx=5 set_tx=0 seq_len=0 key_len=0
+11-11 14:27:00.185 D/wpa_supplicant(19462): wlan0: RSN: flushing PMKID list in the driver
+11-11 14:27:00.185 D/wpa_supplicant(19462): nl80211: Flush PMKIDs
+11-11 14:27:00.185 D/wpa_supplicant(19462): wlan0: State: DISCONNECTED -> INACTIVE
+11-11 14:27:00.186 D/wpa_supplicant(19462): Notifying state change event to hidl control: 2
+11-11 14:27:00.233 D/wpa_supplicant(19462): TDLS: TDLS operation supported by driver
+11-11 14:27:00.233 D/wpa_supplicant(19462): TDLS: Driver uses external link setup
+11-11 14:27:00.233 D/wpa_supplicant(19462): TDLS: Driver does not support TDLS channel switching
+11-11 14:27:00.233 D/wpa_supplicant(19462): wlan0: WPS: UUID based on MAC address: d9a1437b-1368-593c-8258-244807f9e342
+11-11 14:27:00.233 D/wpa_supplicant(19462): EAPOL: SUPP_PAE entering state DISCONNECTED
+11-11 14:27:00.233 D/wpa_supplicant(19462): EAPOL: Supplicant port status: Unauthorized
+11-11 14:27:00.233 D/wpa_supplicant(19462): nl80211: Skip set_supp_port(unauthorized) while not associated
+11-11 14:27:00.233 D/wpa_supplicant(19462): EAPOL: KEY_RX entering state NO_KEY_RECEIVE
+11-11 14:27:00.233 D/wpa_supplicant(19462): EAPOL: SUPP_BE entering state INITIALIZE
+11-11 14:27:00.233 D/wpa_supplicant(19462): EAP: EAP entering state DISABLED
+11-11 14:27:00.233 D/wpa_supplicant(19462): P2P: Add operating class 81
+11-11 14:27:00.233 D/wpa_supplicant(19462): P2P: Channels - hexdump(len=13): 01 02 03 04 05 06 07 08 09 0a 0b 0c 0d
+11-11 14:27:00.233 D/wpa_supplicant(19462): P2P: Add operating class 115
+11-11 14:27:00.233 D/wpa_supplicant(19462): P2P: Channels - hexdump(len=4): 24 28 2c 30
+11-11 14:27:00.233 D/wpa_supplicant(19462): P2P: Add operating class 116
+11-11 14:27:00.233 D/wpa_supplicant(19462): P2P: Channels - hexdump(len=2): 24 2c
+11-11 14:27:00.233 D/wpa_supplicant(19462): P2P: Add operating class 117
+11-11 14:27:00.233 D/wpa_supplicant(19462): P2P: Channels - hexdump(len=2): 28 30
+11-11 14:27:00.233 D/wpa_supplicant(19462): P2P: Add operating class 124
+11-11 14:27:00.233 D/wpa_supplicant(19462): P2P: Channels - hexdump(len=4): 95 99 9d a1
+11-11 14:27:00.233 D/wpa_supplicant(19462): P2P: Add operating class 125
+11-11 14:27:00.233 D/wpa_supplicant(19462): P2P: Channels - hexdump(len=5): 95 99 9d a1 a5
+11-11 14:27:00.233 D/wpa_supplicant(19462): P2P: Add operating class 126
+11-11 14:27:00.233 D/wpa_supplicant(19462): P2P: Channels - hexdump(len=2): 95 9d
+11-11 14:27:00.233 D/wpa_supplicant(19462): P2P: Add operating class 127
+11-11 14:27:00.233 D/wpa_supplicant(19462): P2P: Channels - hexdump(len=2): 99 a1
+11-11 14:27:00.233 D/wpa_supplicant(19462): P2P: Add operating class 130
+11-11 14:27:00.233 D/wpa_supplicant(19462): P2P: Channels - hexdump(len=19): 24 28 2c 30 34 38 3c 40 64 68 6c 70 74 78 7c 80 84 88 8c
+11-11 14:27:00.234 D/wpa_supplicant(19462): P2P: Own listen channel: 81:11
+11-11 14:27:00.235 D/wpa_supplicant(19462): P2P: Random operating channel: 81:11
+11-11 14:27:00.237 D/wpa_supplicant(19462): P2P: initialized
+11-11 14:27:00.237 D/wpa_supplicant(19462): P2P: channels: 81:1,2,3,4,5,6,7,8,9,10,11,12,13 115:36,40,44,48 116:36,44 117:40,48 124:149,153,157,161 125:149,153,157,161,165 126:149,157 127:153,161 130:36,40,44,48,52,56,60,64,100,104,108,112,116,120,124,128,132,136,140
+11-11 14:27:00.237 D/wpa_supplicant(19462): P2P: cli_channels:
+11-11 14:27:00.237 D/wpa_supplicant(19462): nl80211: Scan default IEs - hexdump(len=6): 7f 04 00 00 0a 02
+11-11 14:27:00.237 E/wpa_supplicant(19462): nl80211: Set scan default IEs failed: ret=-524 (Unknown error 524)
+11-11 14:27:00.237 D/wpa_supplicant(19462): Registering interface to hidl control: wlan0
+11-11 14:27:00.237 D/wpa_supplicant(19462): wlan0: Added interface wlan0
+11-11 14:27:00.237 D/wpa_supplicant(19462): wlan0: State: INACTIVE -> DISCONNECTED
+11-11 14:27:00.237 D/wpa_supplicant(19462): nl80211: Set wlan0 operstate 0->0 (DORMANT)
+11-11 14:27:00.237 D/wpa_supplicant(19462): netlink: Operstate: ifindex=50 linkmode=-1 (no change), operstate=5 (IF_OPER_DORMANT)
+11-11 14:27:00.237 D/wpa_supplicant(19462): Notifying state change event to hidl control: 0
+11-11 14:27:00.237 D/wpa_supplicant(19462): wlan0: Determining shared radio frequencies (max len 2)
+11-11 14:27:00.237 D/wpa_supplicant(19462): wlan0: Shared frequencies (len=0): completed iteration
+11-11 14:27:00.237 D/wpa_supplicant(19462): P2P: Add operating class 81
+11-11 14:27:00.237 D/wpa_supplicant(19462): P2P: Channels - hexdump(len=13): 01 02 03 04 05 06 07 08 09 0a 0b 0c 0d
+11-11 14:27:00.237 D/wpa_supplicant(19462): P2P: Add operating class 115
+11-11 14:27:00.237 D/wpa_supplicant(19462): P2P: Channels - hexdump(len=4): 24 28 2c 30
+11-11 14:27:00.237 D/wpa_supplicant(19462): P2P: Add operating class 116
+11-11 14:27:00.237 D/wpa_supplicant(19462): P2P: Channels - hexdump(len=2): 24 2c
+11-11 14:27:00.237 D/wpa_supplicant(19462): P2P: Add operating class 117
+11-11 14:27:00.237 D/wpa_supplicant(19462): P2P: Channels - hexdump(len=2): 28 30
+11-11 14:27:00.237 D/wpa_supplicant(19462): P2P: Add operating class 124
+11-11 14:27:00.237 D/wpa_supplicant(19462): P2P: Channels - hexdump(len=4): 95 99 9d a1
+11-11 14:27:00.237 D/wpa_supplicant(19462): P2P: Add operating class 125
+11-11 14:27:00.237 D/wpa_supplicant(19462): P2P: Channels - hexdump(len=5): 95 99 9d a1 a5
+11-11 14:27:00.237 D/wpa_supplicant(19462): P2P: Add operating class 126
+11-11 14:27:00.237 D/wpa_supplicant(19462): P2P: Channels - hexdump(len=2): 95 9d
+11-11 14:27:00.237 D/wpa_supplicant(19462): P2P: Add operating class 127
+11-11 14:27:00.237 D/wpa_supplicant(19462): P2P: Channels - hexdump(len=2): 99 a1
+11-11 14:27:00.237 D/wpa_supplicant(19462): P2P: Add operating class 130
+11-11 14:27:00.237 D/wpa_supplicant(19462): P2P: Channels - hexdump(len=19): 24 28 2c 30 34 38 3c 40 64 68 6c 70 74 78 7c 80 84 88 8c
+11-11 14:27:00.237 D/wpa_supplicant(19462): P2P: Update channel list
+11-11 14:27:00.237 D/wpa_supplicant(19462): P2P: channels: 81:1,2,3,4,5,6,7,8,9,10,11,12,13 115:36,40,44,48 116:36,44 117:40,48 124:149,153,157,161 125:149,153,157,161,165 126:149,157 127:153,161 130:36,40,44,48,52,56,60,64,100,104,108,112,116,120,124,128,132,136,140
+11-11 14:27:00.237 D/wpa_supplicant(19462): P2P: cli_channels:
+11-11 14:27:00.238 I/SupplicantStaIfaceHal(  719): Completed initialization of ISupplicant.
+11-11 14:27:01.234 D/wpa_supplicant(19462): EAPOL: disable timer tick
+11-11 14:27:05.053 D/wpa_supplicant(19462): wlan0: Removing interface wlan0
+11-11 14:27:05.053 D/wpa_supplicant(19462): wlan0: Request to deauthenticate - bssid=00:00:00:00:00:00 pending_bssid=00:00:00:00:00:00 reason=3 state=DISCONNECTED
+11-11 14:27:05.053 D/wpa_supplicant(19462): TDLS: Tear down peers
+11-11 14:27:05.053 D/wpa_supplicant(19462): nl80211: Data frame filter flags=0x0
+11-11 14:27:05.053 E/wpa_supplicant(19462): nl80211: Failed to open /proc/sys/net/ipv4/conf/wlan0/drop_unicast_in_l2_multicast: No such file or directory
+11-11 14:27:05.053 E/wpa_supplicant(19462): nl80211: Failed to set IPv4 unicast in multicast filter
+11-11 14:27:05.053 D/wpa_supplicant(19462): wlan0: State: DISCONNECTED -> DISCONNECTED
+11-11 14:27:05.053 D/wpa_supplicant(19462): nl80211: Set wlan0 operstate 0->0 (DORMANT)
+11-11 14:27:05.053 D/wpa_supplicant(19462): netlink: Operstate: ifindex=50 linkmode=-1 (no change), operstate=5 (IF_OPER_DORMANT)
+11-11 14:27:05.053 D/wpa_supplicant(19462): EAPOL: External notification - portEnabled=0
+11-11 14:27:05.053 D/wpa_supplicant(19462): EAPOL: External notification - portValid=0
+11-11 14:27:08.216 D/wpa_supplicant(19462): wlan0: WPA: Clear old PMK and PTK
+11-11 14:27:08.217 D/wpa_supplicant(19462): wlan0: Cancelling delayed sched scan
+11-11 14:27:08.217 D/wpa_supplicant(19462): wlan0: Cancelling scan request
+11-11 14:27:08.217 D/wpa_supplicant(19462): wlan0: Cancelling authentication timeout
+11-11 14:27:08.217 D/wpa_supplicant(19462): Off-channel: Clear pending Action frame TX (pending_action_tx=0x0
+11-11 14:27:08.217 D/wpa_supplicant(19462): nl80211: Data frame filter flags=0x0
+11-11 14:27:08.217 E/wpa_supplicant(19462): nl80211: Failed to open /proc/sys/net/ipv4/conf/wlan0/drop_unicast_in_l2_multicast: No such file or directory
+11-11 14:27:08.217 E/wpa_supplicant(19462): nl80211: Failed to set IPv4 unicast in multicast filter
+11-11 14:27:08.217 D/wpa_supplicant(19462): HS20: Delete all stored icons
+11-11 14:27:08.217 D/wpa_supplicant(19462): Off-channel: Action frame sequence done notification: pending_action_tx=0x0 drv_offchan_tx=1 action_tx_wait_time=0 off_channel_freq=0 roc_waiting_drv_freq=0
+11-11 14:27:08.217 D/wpa_supplicant(19462): wlan0: P2P: Disable P2P since removing the management interface is being removed
+11-11 14:27:08.217 D/wpa_supplicant(19462): P2P: All ASP advertisements flushed
+11-11 14:27:08.217 D/wpa_supplicant(19462): P2P: Disabling Extended Listen Timing
+11-11 14:27:08.217 D/wpa_supplicant(19462): P2P: Stopping find
+11-11 14:27:08.217 D/wpa_supplicant(19462): P2P: Clear timeout (state=IDLE)
+11-11 14:27:08.217 D/wpa_supplicant(19462): P2P: State IDLE -> IDLE
+11-11 14:27:08.217 D/wpa_supplicant(19462): P2P: All ASP advertisements flushed
+11-11 14:27:08.217 D/wpa_supplicant(19462): Remove interface wlan0 from radio phy15
+11-11 14:27:08.217 D/wpa_supplicant(19462): Remove radio phy15
+11-11 14:27:08.217 I/wpa_supplicant(19462): nl80211: deinit ifname=wlan0 disabled_11b_rates=0
+11-11 14:27:08.244 D/wpa_supplicant(19462): nl80211: Remove monitor interface: refcount=0
+11-11 14:27:08.244 D/wpa_supplicant(19462): netlink: Operstate: ifindex=50 linkmode=0 (kernel-control), operstate=6 (IF_OPER_UP)
+11-11 14:27:08.245 D/wpa_supplicant(19462): nl80211: Set mode ifindex 50 iftype 2 (STATION)
+11-11 14:27:08.245 D/wpa_supplicant(19462): nl80211: Unsubscribe mgmt frames handle 0x888888f591699309 (mode change)
+11-11 14:27:08.245 D/wpa_supplicant(19462): Deregistering interface from hidl control: wlan0
+11-11 14:27:08.245 I/wpa_supplicant(19462): wlan0: CTRL-EVENT-TERMINATING 
+11-11 14:27:08.245 D/wpa_supplicant(19462): Deiniting hidl control
+11-11 14:27:08.247 W/SupplicantStaIfaceHal(  719): ISupplicant died: cookie=9
