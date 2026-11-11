@@ -1,6 +1,6 @@
 # Mi 4i (ferrari) — WiFi on LineageOS 17.1: FIXED
 
-Status (2026-11-11 14:30 SGT): **WiFi works.** `dumpsys wifi` → `Wi-Fi is enabled`,
+Status (2026-11-11 14:45 SGT): **WiFi works: connected to a WPA2 5 GHz AP at 433 Mbps, DHCP 192.168.31.85, ping 8.8.8.8 0% loss, DNS OK.** `dumpsys wifi` → `Wi-Fi is enabled`,
 `wpa_supplicant` running, scans return 2.4 GHz and 5 GHz networks (RSSI around −28 dBm near the AP).
 
 ## Symptoms (before)
@@ -61,6 +61,5 @@ The stock MIUI V6.6.10.0 WiFi files were pulled from the recovery OTA with HTTP 
 Its HAL `libwifi-hal-qcom.so` (Android 5) lacks `init_wifi_vendor_hal_func_table` and
 can't replace the Android 10 HAL. It turned out not to be needed.
 
-## Unrelated issue seen
-`thermal-engine` (root, pid ~387) was using about 1000% CPU (load average about 12), which makes the
-phone sluggish and adb slow. Worth looking at next (e.g. the thermal-engine config, or disabling it).
+## thermal-engine
+Fixed separately, see [mi4i-thermal.md](mi4i-thermal.md).

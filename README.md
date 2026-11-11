@@ -227,3 +227,10 @@ flash as normal. The patch is a plain unified diff against
 ## WiFi status (2026-11-11): FIXED
 
 WiFi works (scans 2.4 and 5 GHz). Two fixes: create `/dev/socket/wifihal` in the legacy WiFi HAL `.rc`, and declare `android.hardware.wifi.supplicant` **@1.2** (not 1.0) in `/vendor/etc/vintf/manifest.xml`. Details: [docs/mi4i-wifi.md](docs/mi4i-wifi.md).
+
+## thermal-engine CPU hog (2026-11-11): FIXED
+
+The stock `thermal-engine` busy-looped at 300–1000% CPU on Android 10. It is now disabled, and kernel `msm_thermal` is enabled at boot instead. Details: [docs/mi4i-thermal.md](docs/mi4i-thermal.md).
+
+## Current status
+Boot ✅ · Audio ✅ · Bluetooth ✅ · WiFi ✅ (connected, internet OK) · Thermal ✅

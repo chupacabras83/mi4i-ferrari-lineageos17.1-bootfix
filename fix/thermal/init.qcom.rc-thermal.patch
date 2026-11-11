@@ -1,0 +1,20 @@
+--- init.qcom.rc.orig
++++ init.qcom.rc
+@@ -253,6 +253,8 @@
+ 
+ service thermal-engine /system/vendor/bin/thermal-engine
+     class main
++    # disabled: busy-loops on a futex under Android 10 (~300-1000% CPU); kernel msm_thermal used instead
++    disabled
+     user root
+     socket thermal-send-client stream 0666 system system
+     socket thermal-recv-client stream 0660 system system
+@@ -278,3 +280,8 @@
+ 
+ on property:apexd.status=ready
+     mount none /system/etc/swcodec/ld.config.txt /apex/com.android.media.swcodec/etc/ld.config.txt bind
++
++# Mi 4i: use kernel msm_thermal instead of the stock (Android 5) thermal-engine
++on boot
++    write /sys/module/msm_thermal/parameters/enabled Y
++    write /sys/module/msm_thermal/core_control/enabled 1
