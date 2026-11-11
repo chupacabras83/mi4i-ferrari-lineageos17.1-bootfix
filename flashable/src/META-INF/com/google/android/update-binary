@@ -1,0 +1,42 @@
+#!/sbin/sh
+# Mi 4i (ferrari) LineageOS 17.1 fix pack: boot (VINTF), audio, Bluetooth, WiFi, thermal
+OUTFD=$2; ZIP=$3
+ui_print() { echo "ui_print $1" > /proc/self/fd/$OUTFD; echo "ui_print" > /proc/self/fd/$OUTFD; }
+abort() { ui_print "ERROR: $1"; umount /system_root 2>/dev/null; exit 1; }
+
+ui_print "Mi 4i LineageOS 17.1 fix pack"
+ui_print "boot / audio / bluetooth / wifi / thermal"
+
+DEV=$(getprop ro.product.device); [ -z "$DEV" ] && DEV=$(getprop ro.build.product)
+case "$DEV" in ferrari*|Mi4i|mi4i) ;; *) abort "this zip is for the Xiaomi Mi 4i (ferrari), found '$DEV'";; esac
+
+mkdir -p /system_root
+umount /system_root 2>/dev/null; umount /system 2>/dev/null
+mount -t ext4 -o rw /dev/block/bootdevice/by-name/system /system_root 2>/dev/null || \
+mount -t ext4 -o rw /dev/block/mmcblk0p34 /system_root || abort "cannot mount system"
+S=/system_root/system
+[ -f $S/build.prop ] || abort "system not found (is LineageOS 17.1 installed?)"
+grep -q "ro.lineage.version=17.1" $S/build.prop || abort "LineageOS 17.1 not detected on system"
+
+TMP=/tmp/mi4ifix; rm -rf $TMP; mkdir -p $TMP
+unzip -o "$ZIP" 'files/*' -d $TMP >/dev/null || abort "unzip failed"
+F=$TMP/files
+BK=$S/mi4i-fix-backup; mkdir -p $BK
+
+inst() { # src dst
+  [ -f "$2" ] && [ ! -f "$BK/$(basename $1).orig" ] && cp -p "$2" "$BK/$(basename $1).orig"
+  mkdir -p "$(dirname $2)"; cp -f "$1" "$2" || abort "copy $2"
+  chown 0:0 "$2"; chmod 0644 "$2"; chcon u:object_r:vendor_configs_file:s0 "$2" 2>/dev/null
+  ui_print "  + ${2#/system_root}"
+}
+ui_print "Installing:"
+inst $F/vendor__etc__vintf__manifest.xml                               $S/vendor/etc/vintf/manifest.xml
+inst $F/vendor__etc__init__hw__init.qcom.rc                            $S/vendor/etc/init/hw/init.qcom.rc
+inst $F/vendor__etc__init__android.hardware.wifi@1.0-service.legacy.rc $S/vendor/etc/init/android.hardware.wifi@1.0-service.legacy.rc
+inst $F/vendor__etc__audio_policy_configuration.xml                    $S/vendor/etc/audio_policy_configuration.xml
+inst $F/system__etc__audio_policy_configuration.xml                    $S/etc/audio_policy_configuration.xml
+
+sync; umount /system_root
+ui_print "Originals backed up to /system/mi4i-fix-backup"
+ui_print "Done. Reboot system."
+exit 0

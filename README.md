@@ -232,5 +232,8 @@ WiFi works (scans 2.4 and 5 GHz). Two fixes: create `/dev/socket/wifihal` in the
 
 The stock `thermal-engine` busy-looped at 300–1000% CPU on Android 10. It is now disabled, and kernel `msm_thermal` is enabled at boot instead. Details: [docs/mi4i-thermal.md](docs/mi4i-thermal.md).
 
+## One-flash install
+TWRP-flashable zip with all fixes: [flashable/](flashable/) (also attached to the GitHub Release).
+
 ## Current status
 Boot ✅ · Audio ✅ · Bluetooth ✅ · WiFi ✅ (connected, internet OK) · Thermal ✅
