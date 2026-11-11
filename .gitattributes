@@ -1,0 +1,3 @@
+flashable/src/** text eol=lf
+*.zip binary
+*.rc text eol=lf
